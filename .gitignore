@@ -19,7 +19,6 @@
 
 # Eclipse files
 .checkstyle
-.classpath
 .metadata
 bin
 
