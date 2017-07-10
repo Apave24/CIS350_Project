@@ -15,11 +15,11 @@ import javax.swing.JTextPane;
 public class MainGUI {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextPane textField;
+	private JTextPane textField_1;
+	private JTextPane textField_2;
+	private JTextPane textField_3;
+	private JTextPane textField_4;
 
 	/**
 	 * @param args
@@ -80,28 +80,23 @@ public class MainGUI {
 		btnFive.setBounds(365, 189, 80, 29);
 		panel.add(btnFive);
 		
-		textField = new JTextField();
+		textField = new JTextPane();
 		textField.setBounds(5, 151, 80, 26);
 		panel.add(textField);
-		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		textField_1 = new JTextPane();
 		textField_1.setBounds(95, 151, 80, 26);
 		panel.add(textField_1);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
+		textField_2 = new JTextPane();
 		textField_2.setBounds(185, 151, 80, 26);
 		panel.add(textField_2);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
+		textField_3 = new JTextPane();
 		textField_3.setBounds(275, 151, 80, 26);
 		panel.add(textField_3);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
+		textField_4 = new JTextPane();
 		textField_4.setBounds(365, 151, 80, 26);
 		panel.add(textField_4);
 		
