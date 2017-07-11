@@ -9,20 +9,21 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
+/**
+ * @author evankiel
+ *
+ */
 public class MainGUI {
 
-	private JFrame frame;
-	private JTextPane textField;
-	private JTextPane textField_1;
-	private JTextPane textField_2;
-	private JTextPane textField_3;
-	private JTextPane textField_4;
-
 	/**
-	 * @param args
+	 * 
+	 */
+	private JFrame frame;
+	
+	/**
+	 * @param args String[]
 	 */
 	public static void main(final String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -65,45 +66,75 @@ public class MainGUI {
 		panel.add(btnOne);
 		
 		JButton btnTwo = new JButton("TWO");
+		btnTwo.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent e) {
+			}
+		});
 		btnTwo.setBounds(95, 189, 80, 29);
 		panel.add(btnTwo);
 		
 		JButton btnThree = new JButton("THREE");
+		btnThree.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent e) {
+			}
+		});
 		btnThree.setBounds(185, 189, 80, 29);
 		panel.add(btnThree);
 		
 		JButton btnFour = new JButton("FOUR");
+		btnFour.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent e) {
+			}
+		});
 		btnFour.setBounds(275, 189, 80, 29);
 		panel.add(btnFour);
 		
 		JButton btnFive = new JButton("FIVE");
+		btnFive.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent e) {
+			}
+		});
 		btnFive.setBounds(365, 189, 80, 29);
 		panel.add(btnFive);
 		
-		textField = new JTextPane();
+		JTextPane textField = new JTextPane();
 		textField.setBounds(5, 151, 80, 26);
 		panel.add(textField);
 		
-		textField_1 = new JTextPane();
-		textField_1.setBounds(95, 151, 80, 26);
-		panel.add(textField_1);
+		JTextPane textField1 = new JTextPane();
+		textField1.setBounds(95, 151, 80, 26);
+		panel.add(textField1);
 		
-		textField_2 = new JTextPane();
-		textField_2.setBounds(185, 151, 80, 26);
-		panel.add(textField_2);
+		JTextPane textField2 = new JTextPane();
+		textField2.setBounds(185, 151, 80, 26);
+		panel.add(textField2);
 		
-		textField_3 = new JTextPane();
-		textField_3.setBounds(275, 151, 80, 26);
-		panel.add(textField_3);
+		JTextPane textField3 = new JTextPane();
+		textField3.setBounds(275, 151, 80, 26);
+		panel.add(textField3);
 		
-		textField_4 = new JTextPane();
-		textField_4.setBounds(365, 151, 80, 26);
-		panel.add(textField_4);
+		JTextPane textField4 = new JTextPane();
+		textField4.setBounds(365, 151, 80, 26);
+		panel.add(textField4);
+		
+		JTextPane textPane3 = new JTextPane();
+		textPane3.setBounds(310, 31, 80, 26);
+		panel.add(textPane3);
+		
+		JTextPane txtpnWhichActorListed = new JTextPane();
+		txtpnWhichActorListed.setText(
+				"Which actor listed below is in a movie with:");
+		txtpnWhichActorListed.setBounds(16, 31, 282, 16);
+		panel.add(txtpnWhichActorListed);
 		
 		JSplitPane splitPane = new JSplitPane();
 		frame.getContentPane().add(splitPane, BorderLayout.SOUTH);
 		
 		JButton btnQuit = new JButton("Quit");
+		btnQuit.addActionListener(new ActionListener() {
+			public void actionPerformed(final ActionEvent e) {
+			}
+		});
 		splitPane.setLeftComponent(btnQuit);
 		
 		JButton btnPlay = new JButton("Play");
