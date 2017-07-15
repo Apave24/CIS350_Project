@@ -7,6 +7,8 @@ import info.movito.themoviedbapi.TmdbAccount;
 import info.movito.themoviedbapi.TmdbApi;
 import info.movito.themoviedbapi.TmdbMovies;
 import info.movito.themoviedbapi.TmdbMovies.MovieMethod;
+import info.movito.themoviedbapi.TmdbPeople;
+import info.movito.themoviedbapi.TmdbPeople.PersonResultsPage;
 import info.movito.themoviedbapi.TmdbSearch;
 import info.movito.themoviedbapi.model.MovieDb;
 import info.movito.themoviedbapi.model.Reviews;
@@ -15,6 +17,7 @@ import info.movito.themoviedbapi.model.config.Account;
 import info.movito.themoviedbapi.model.core.AccountID;
 import info.movito.themoviedbapi.model.core.MovieResultsPage;
 import info.movito.themoviedbapi.model.core.SessionToken;
+import info.movito.themoviedbapi.model.people.Person;
 import info.movito.themoviedbapi.model.people.PersonCast;
 import info.movito.themoviedbapi.model.people.PersonCrew;
 
@@ -248,10 +251,25 @@ public final class TmDBModel {
 		}	
 	}
 	
+	public static void getPopular() {
+		TmdbPeople tmdbPeople = tmdbApi.getPeople();
+		// TODO Auto-generated method stub
+		List<Person> popularList = tmdbPeople.getPersonPopular(0).getResults();
+		Iterator<Person> iterator = popularList.iterator();
+		while (iterator.hasNext()) {
+			Person person = iterator.next();
+			System.out.println(person.getId());
+			System.out.println();
+		}
+		
+	}
+	
 	/**
 	 * 
 	 */
 	private TmDBModel() {
 		
 	}
+
+
 }
