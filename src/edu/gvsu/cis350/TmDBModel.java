@@ -2,13 +2,13 @@ package edu.gvsu.cis350;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import info.movito.themoviedbapi.TmdbAccount;
 import info.movito.themoviedbapi.TmdbApi;
 import info.movito.themoviedbapi.TmdbMovies;
 import info.movito.themoviedbapi.TmdbMovies.MovieMethod;
 import info.movito.themoviedbapi.TmdbPeople;
-import info.movito.themoviedbapi.TmdbPeople.PersonResultsPage;
 import info.movito.themoviedbapi.TmdbSearch;
 import info.movito.themoviedbapi.model.MovieDb;
 import info.movito.themoviedbapi.model.Reviews;
@@ -251,17 +251,10 @@ public final class TmDBModel {
 		}	
 	}
 	
-	public static void getPopular() {
-		TmdbPeople tmdbPeople = tmdbApi.getPeople();
-		// TODO Auto-generated method stub
+	public static Person getPrimaryActor(TmdbPeople tmdbPeople) {
 		List<Person> popularList = tmdbPeople.getPersonPopular(0).getResults();
-		Iterator<Person> iterator = popularList.iterator();
-		while (iterator.hasNext()) {
-			Person person = iterator.next();
-			System.out.println(person.getId());
-			System.out.println();
-		}
-		
+		Random randomIndex = new Random();
+		return popularList.get(randomIndex.nextInt(popularList.size()));
 	}
 	
 	/**

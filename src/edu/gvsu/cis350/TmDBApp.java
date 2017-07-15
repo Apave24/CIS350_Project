@@ -1,5 +1,8 @@
 package edu.gvsu.cis350;
 
+import info.movito.themoviedbapi.TmdbPeople;
+import info.movito.themoviedbapi.TmdbApi;
+
 
 /**
  * TmDB API Test Application.
@@ -24,8 +27,10 @@ public final class TmDBApp {
 		
 		// demo of account related features of TMDb API
 		//TmDBModel.demoAccountFeatures();
-		
-		TmDBModel.getPopular();
+		TmdbApi tmdbApi 
+			= new TmdbApi("ee5a0a6208f35c4a8010636efd3f5d9b");
+		TmdbPeople tmdbPeople = tmdbApi.getPeople();
+		TmDBModel.getPrimaryActor(tmdbPeople);
 	}
 	
 	/**
