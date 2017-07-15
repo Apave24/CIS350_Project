@@ -19,6 +19,8 @@ import info.movito.themoviedbapi.model.core.MovieResultsPage;
 import info.movito.themoviedbapi.model.core.SessionToken;
 import info.movito.themoviedbapi.model.people.Person;
 import info.movito.themoviedbapi.model.people.PersonCast;
+import info.movito.themoviedbapi.model.people.PersonCredit;
+import info.movito.themoviedbapi.model.people.PersonCredits;
 import info.movito.themoviedbapi.model.people.PersonCrew;
 
 
@@ -257,6 +259,50 @@ public final class TmDBModel {
 		return popularList.get(randomIndex.nextInt(popularList.size()));
 	}
 	
+	public static Person getIncorrectAnswers(TmdbPeople tmdbPeople, Person primaryActor){
+		boolean unrelatedActors = true;
+		PersonCredits primaryActorCredits = tmdbPeople.getPersonCredits(primaryActor.getId());
+		Random randomIndex = new Random();
+		List<Person> popularList = tmdbPeople.getPersonPopular(randomIndex.nextInt(100)).getResults();
+		Person secondaryActor = popularList.get(randomIndex.nextInt(popularList.size()));
+		PersonCredits secondaryActorCredits = tmdbPeople.getPersonCredits(secondaryActor.getId());
+		Iterator<PersonCredit> primaryIterator = primaryActorCredits.getCast().iterator();
+		Iterator<PersonCredit> secondaryIterator = secondaryActorCredits.getCast().iterator();
+		while(primaryIterator.hasNext()){
+			PersonCredit primaryCredit = primaryIterator.next();
+			int primaryMovieID = primaryCredit.getMovieId();
+			while(secondaryIterator.hasNext()){
+				PersonCredit secondaryCredit = secondaryIterator.next();
+				int secondaryMovieID = secondaryCredit.getMovieId();
+				if(primaryMovieID == secondaryMovieID){
+					unrelatedActors = false;
+					break;
+				}
+			}
+			if (!unrelatedActors) {
+				break;
+			}
+		}
+		if (!unrelatedActors) {
+			return getIncorrectAnswers(tmdbPeople, primaryActor);
+		} else {
+			return secondaryActor;
+		}
+	}
+	
+	public static PersonCast getRelatedActor(TmdbPeople tmdbPeople,TmdbMovies tmdbMovies, Person primaryActor){
+		int actorId = primaryActor.getId(); 
+        List<PersonCredit> movieList = tmdbPeople.getPersonCredits(actorId).getCast();
+        Random randomIndex = new Random();
+        int randomMovieId = movieList.get(randomIndex.nextInt(movieList.size())).getMovieId();
+        System.out.println(tmdbMovies.getMovie(randomMovieId, "en"));
+        List<PersonCast> cast = tmdbMovies.getCredits(randomMovieId).getCast();
+       
+        PersonCast randomRelatedPerson = cast.get(randomIndex.nextInt(cast.size()));
+       
+        System.out.println(randomRelatedPerson.getName());
+        return randomRelatedPerson;
+}
 	/**
 	 * 
 	 */

@@ -1,26 +1,44 @@
 package edu.gvsu.cis350;
 
+import info.movito.themoviedbapi.TmdbApi;
+import info.movito.themoviedbapi.TmdbMovies;
+import info.movito.themoviedbapi.TmdbPeople;
+import info.movito.themoviedbapi.model.people.Person;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
+
 import java.awt.BorderLayout;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JTextPane;
+
+import java.awt.Font;
+import java.util.Random;
+
+import javax.swing.UIManager;
 
 /**
  * @author evankiel
  *
  */
+
+
 public class MainGUI {
 
 	/**
 	 * 
 	 */
 	private JFrame frame;
+	
 	
 	/**
 	 * @param args String[]
@@ -42,88 +60,144 @@ public class MainGUI {
 	 * Create the application.
 	 */
 	public MainGUI() {
-		initialize();
+			initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		TmdbApi tmdbApi 
+			= new TmdbApi("ee5a0a6208f35c4a8010636efd3f5d9b");
+		TmdbPeople tmdbPeople = tmdbApi.getPeople();
+		TmdbMovies tmdbMovies = tmdbApi.getMovies(); 
+	
+		Person primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
+		Person relatedActor = TmDBModel.getRelatedActor(tmdbPeople,tmdbMovies, primaryActor);
+		Person actor;
+		
+		Random randomIndex = new Random();
+		final int correctAnswer = randomIndex.nextInt(4);
+		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 620, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JButton btnOne = new JButton("ONE");
+		if (correctAnswer == 0) {
+			actor = relatedActor;
+		} else {
+			actor = TmDBModel.getIncorrectAnswers(
+					tmdbPeople, primaryActor);
+		}
+		JButton btnOne = new JButton(actor.getName());
+		btnOne.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnOne.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
+				if (correctAnswer == 0) {
+					JOptionPane.showMessageDialog(null, "Correct Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(null, "Incorrect Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		});
-		btnOne.setBounds(5, 189, 80, 29);
+		btnOne.setBounds(20, 175, 100, 50);
 		panel.add(btnOne);
 		
-		JButton btnTwo = new JButton("TWO");
+		if (correctAnswer == 1) {
+			actor = relatedActor;
+		} else {
+			actor = TmDBModel.getIncorrectAnswers(
+					tmdbPeople, primaryActor);
+		}
+		JButton btnTwo = new JButton(actor.getName());
+		btnTwo.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnTwo.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
+				if (correctAnswer == 1) {
+					JOptionPane.showMessageDialog(null, "Correct Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(null, "Incorrect Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		});
-		btnTwo.setBounds(95, 189, 80, 29);
+		btnTwo.setBounds(140, 175, 100, 50);
 		panel.add(btnTwo);
 		
-		JButton btnThree = new JButton("THREE");
+		if (correctAnswer == 2) {
+			actor = relatedActor;
+		} else {
+			actor = TmDBModel.getIncorrectAnswers(
+					tmdbPeople, primaryActor);
+		}
+		JButton btnThree = new JButton(actor.getName());
+		btnThree.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnThree.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
+				if (correctAnswer == 2) {
+					JOptionPane.showMessageDialog(null, "Correct Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(null, "Incorrect Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		});
-		btnThree.setBounds(185, 189, 80, 29);
+		btnThree.setBounds(260, 175, 100, 50);
 		panel.add(btnThree);
 		
-		JButton btnFour = new JButton("FOUR");
+		if (correctAnswer == 3) {
+			actor = relatedActor;
+		} else {
+			actor = TmDBModel.getIncorrectAnswers(
+					tmdbPeople, primaryActor);
+		}
+		JButton btnFour = new JButton(actor.getName());
+		btnFour.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnFour.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
+				if (correctAnswer == 3) {
+					JOptionPane.showMessageDialog(null, "Correct Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(null, "Incorrect Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		});
-		btnFour.setBounds(275, 189, 80, 29);
+		btnFour.setBounds(380, 175, 100, 50);
 		panel.add(btnFour);
 		
-		JButton btnFive = new JButton("FIVE");
+		if (correctAnswer == 4) {
+			actor = relatedActor;
+		} else {
+			actor = TmDBModel.getIncorrectAnswers(
+					tmdbPeople, primaryActor);
+		}
+		JButton btnFive = new JButton(actor.getName());
+		btnFive.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnFive.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
+				if (correctAnswer == 4) {
+					JOptionPane.showMessageDialog(null, "Correct Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(null, "Incorrect Answer", "", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		});
-		btnFive.setBounds(365, 189, 80, 29);
+		btnFive.setBounds(500, 175, 100, 50);
 		panel.add(btnFive);
 		
-		JTextPane textField = new JTextPane();
-		textField.setBounds(5, 151, 80, 26);
-		panel.add(textField);
-		
-		JTextPane textField1 = new JTextPane();
-		textField1.setBounds(95, 151, 80, 26);
-		panel.add(textField1);
-		
-		JTextPane textField2 = new JTextPane();
-		textField2.setBounds(185, 151, 80, 26);
-		panel.add(textField2);
-		
-		JTextPane textField3 = new JTextPane();
-		textField3.setBounds(275, 151, 80, 26);
-		panel.add(textField3);
-		
-		JTextPane textField4 = new JTextPane();
-		textField4.setBounds(365, 151, 80, 26);
-		panel.add(textField4);
-		
 		JTextPane textPane3 = new JTextPane();
-		textPane3.setBounds(310, 31, 80, 26);
+		textPane3.setText(primaryActor.getName());
+		textPane3.setBackground(UIManager.getColor("Button.background"));
+		textPane3.setBounds(310, 31, 259, 26);
 		panel.add(textPane3);
 		
 		JTextPane txtpnWhichActorListed = new JTextPane();
 		txtpnWhichActorListed.setText(
 				"Which actor listed below is in a movie with:");
+		txtpnWhichActorListed.setBackground(UIManager.getColor("Button.background"));
 		txtpnWhichActorListed.setBounds(16, 31, 282, 16);
 		panel.add(txtpnWhichActorListed);
 		
