@@ -101,6 +101,15 @@ public class MainGUI {
 	 * Label to display the actor's image.
 	 */
 	private JLabel lblNewLabel;
+	/**
+	 * Number of correct answers.
+	 */
+	private int wins = -1;
+	
+	/**
+	 * Pane to show number correct.
+	 */
+	private JTextPane textPaneWins;
 	
 	/**
 	 * Start GUI and catch any errors present. 
@@ -131,6 +140,7 @@ public class MainGUI {
 	 * Updates the question and answers for the game.
 	 */
 	public void update() {
+		wins++;
 		Random randomIndex = new Random();
 		correctAnswer = randomIndex.nextInt(4);
 		TmdbApi tmdbApi 
@@ -142,7 +152,8 @@ public class MainGUI {
 		do {
 			relatedActor = TmDBModel.getRelatedActor(
 				tmdbPeople, tmdbMovies, primaryActor);
-		} while (relatedActor.getCastId() == primaryActor.getCastId());
+		} while (relatedActor.getCastId() == primaryActor.getCastId() 
+		    || relatedActor.getName().equals(primaryActor.getName()));
 		
 		primaryActorImage 
 			= tmdbPeople.getPersonImages(primaryActor.getId());
@@ -174,6 +185,8 @@ public class MainGUI {
 		textPane4.repaint();
 		textPanePrimary.setText(primaryActor.getName());
 		textPanePrimary.repaint();
+		textPaneWins.setText("Points: " + wins);
+		textPaneWins.repaint();
 		
 		URL url = null;
 		try {
@@ -202,7 +215,7 @@ public class MainGUI {
 	 * Including setting up action listeners excluding dynamic field text.
 	 * @throws MalformedURLException 
 	 */
-	private void initialize() throws MalformedURLException {	
+	private void initialize() throws MalformedURLException {
 		update();
 		
 		frame = new JFrame();
@@ -262,6 +275,7 @@ public class MainGUI {
 					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
+					wins--;
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
 				       JOptionPane.INFORMATION_MESSAGE);
@@ -284,6 +298,7 @@ public class MainGUI {
 					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
+					wins--;
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
 					   JOptionPane.INFORMATION_MESSAGE);
@@ -306,6 +321,7 @@ public class MainGUI {
 					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
+					wins--;
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
 					   JOptionPane.INFORMATION_MESSAGE);
@@ -328,6 +344,7 @@ public class MainGUI {
 					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
+					wins--;
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
 					   JOptionPane.INFORMATION_MESSAGE);
@@ -350,6 +367,7 @@ public class MainGUI {
 					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
+					wins--;
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
 					   JOptionPane.INFORMATION_MESSAGE);
@@ -372,7 +390,6 @@ public class MainGUI {
 		lblNewLabel.setIcon(icon);
 		lblNewLabel.setBounds(235, 60, 150, 200);
 		frame.getContentPane().add(lblNewLabel);
-		updateGUI();
 
 
 		
@@ -392,6 +409,7 @@ public class MainGUI {
 		JButton btnPlay = new JButton("New Question");
 		btnPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
+				wins--;
 				update();
 				updateGUI();
 				//lblNewLabel.setVisible(false);
@@ -399,5 +417,13 @@ public class MainGUI {
 			}
 		});
 		splitPane.setRightComponent(btnPlay);
+		
+		textPaneWins = new JTextPane();
+		textPaneWins.setText("Points: " + wins);
+		textPaneWins.setBackground(
+				UIManager.getColor("Button.background"));
+		textPaneWins.setBounds(26, 59, 143, 16);
+		frame.getContentPane().add(textPaneWins);
+		updateGUI();
 	}
 }
