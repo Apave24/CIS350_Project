@@ -33,6 +33,7 @@ import java.util.Random;
 
 import javax.swing.UIManager;
 import javax.swing.JLabel;
+import java.awt.SystemColor;
 
 /**
  * @author evankiel
@@ -68,13 +69,13 @@ public class MainGUI {
 	 */
 	private List<Artwork> primaryActorImage;
 	
-	private JButton btnOne;
-	private JButton btnTwo;
-	private JButton btnThree;
-	private JButton btnFour;
-	private JButton btnFive;
-	private ImageIcon icon;
+	private JTextPane textPane4;
 	private JTextPane textPane3;
+	private JTextPane textPane2;
+	private JTextPane textPane1;
+	private JTextPane textPane;
+	private ImageIcon icon;
+	private JTextPane textPanePrimary;
 	private JLabel lblNewLabel;
 	
 	/**
@@ -131,18 +132,18 @@ public class MainGUI {
 	 * @throws MalformedURLException a
 	 */
 	public void updateGUI() {
-		btnOne.setText(actors.get(0).getName());
-		btnOne.repaint();
-		btnTwo.setText(actors.get(1).getName());
-		btnTwo.repaint();
-		btnThree.setText(actors.get(2).getName());
-		btnThree.repaint();
-		btnFour.setText(actors.get(3).getName());
-		btnFour.repaint();
-		btnFive.setText(actors.get(4).getName());
-		btnFive.repaint();
-		textPane3.setText(primaryActor.getName());
+		textPane.setText(actors.get(0).getName());
+		textPane.repaint();
+		textPane1.setText(actors.get(1).getName());
+		textPane1.repaint();
+		textPane2.setText(actors.get(2).getName());
+		textPane2.repaint();
+		textPane3.setText(actors.get(3).getName());
 		textPane3.repaint();
+		textPane4.setText(actors.get(4).getName());
+		textPane4.repaint();
+		textPanePrimary.setText(primaryActor.getName());
+		textPanePrimary.repaint();
 		
 		URL url = null;
 		try {
@@ -161,8 +162,6 @@ public class MainGUI {
 			Image newimg = img.getScaledInstance(
 				150, 200,  java.awt.Image.SCALE_SMOOTH);  
 			icon = new ImageIcon(newimg);
-			lblNewLabel.setIcon(icon);
-			lblNewLabel.repaint();
 		}
 		
 	}
@@ -177,12 +176,42 @@ public class MainGUI {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 620, 400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+	
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		frame.getContentPane().setLayout(null);
 		
-		btnOne = new JButton(actors.get(0).getName());
+		textPane4 = new JTextPane();
+		textPane4.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		textPane4.setBackground(SystemColor.window);
+		textPane4.setBounds(505, 291, 90, 16);
+		frame.getContentPane().add(textPane4);
+		
+		textPane3 = new JTextPane();
+		textPane3.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		textPane3.setBackground(SystemColor.window);
+		textPane3.setBounds(385, 291, 90, 16);
+		frame.getContentPane().add(textPane3);
+		
+		textPane2 = new JTextPane();
+		textPane2.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		textPane2.setBackground(SystemColor.window);
+		textPane2.setBounds(271, 291, 76, 16);
+		frame.getContentPane().add(textPane2);
+		
+		textPane1 = new JTextPane();
+		textPane1.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		textPane1.setBackground(SystemColor.window);
+		textPane1.setBounds(145, 291, 90, 16);
+		frame.getContentPane().add(textPane1);
+		
+		textPane = new JTextPane();
+		textPane.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
+		textPane.setBackground(UIManager.getColor("Button.background"));
+		textPane.setBounds(25, 291, 90, 16);
+		frame.getContentPane().add(textPane);
+		
+		JButton btnOne = new JButton();
 		btnOne.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnOne.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
@@ -200,7 +229,7 @@ public class MainGUI {
 		btnOne.setBounds(20, 275, 100, 50);
 		frame.getContentPane().add(btnOne);
 		
-		btnTwo = new JButton(actors.get(1).getName());
+		JButton btnTwo = new JButton();
 		btnTwo.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnTwo.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
@@ -218,7 +247,7 @@ public class MainGUI {
 		btnTwo.setBounds(140, 275, 100, 50);
 		frame.getContentPane().add(btnTwo);
 		
-		btnThree = new JButton(actors.get(2).getName());
+		JButton btnThree = new JButton();
 		btnThree.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnThree.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
@@ -233,10 +262,10 @@ public class MainGUI {
 				}
 			}
 		});
-		btnThree.setBounds(260, 275, 100, 50);
+		btnThree.setBounds(265, 275, 90, 50);
 		frame.getContentPane().add(btnThree);
 		
-		btnFour = new JButton(actors.get(3).getName());
+		JButton btnFour = new JButton();
 		btnFour.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnFour.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
@@ -254,7 +283,7 @@ public class MainGUI {
 		btnFour.setBounds(380, 275, 100, 50);
 		frame.getContentPane().add(btnFour);
 		
-		btnFive = new JButton(actors.get(4).getName());
+		JButton btnFive = new JButton();
 		btnFive.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		btnFive.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
@@ -272,12 +301,12 @@ public class MainGUI {
 		btnFive.setBounds(500, 275, 100, 50);
 		frame.getContentPane().add(btnFive);
 		
-		textPane3 = new JTextPane();
-		textPane3.setText(primaryActor.getName());
-		textPane3.setBackground(
+		textPanePrimary = new JTextPane();
+		textPanePrimary.setText(primaryActor.getName());
+		textPanePrimary.setBackground(
 				UIManager.getColor("Button.background"));
-		textPane3.setBounds(310, 31, 259, 26);
-		frame.getContentPane().add(textPane3);
+		textPanePrimary.setBounds(310, 31, 259, 26);
+		frame.getContentPane().add(textPanePrimary);
 		
 		JTextPane txtpnWhichActorListed = new JTextPane();
 		txtpnWhichActorListed.setText(
@@ -313,6 +342,7 @@ public class MainGUI {
 			public void actionPerformed(final ActionEvent e) {
 				update();
 				updateGUI();
+				frame.getContentPane().repaint();
 			}
 		});
 		splitPane.setRightComponent(btnPlay);
