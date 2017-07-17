@@ -4,24 +4,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import info.movito.themoviedbapi.TmdbAccount;
-import info.movito.themoviedbapi.TmdbApi;
+
 import info.movito.themoviedbapi.TmdbMovies;
-import info.movito.themoviedbapi.TmdbMovies.MovieMethod;
 import info.movito.themoviedbapi.TmdbPeople;
-import info.movito.themoviedbapi.TmdbSearch;
-import info.movito.themoviedbapi.model.MovieDb;
-import info.movito.themoviedbapi.model.Reviews;
-import info.movito.themoviedbapi.model.Video;
-import info.movito.themoviedbapi.model.config.Account;
-import info.movito.themoviedbapi.model.core.AccountID;
-import info.movito.themoviedbapi.model.core.MovieResultsPage;
-import info.movito.themoviedbapi.model.core.SessionToken;
 import info.movito.themoviedbapi.model.people.Person;
 import info.movito.themoviedbapi.model.people.PersonCast;
 import info.movito.themoviedbapi.model.people.PersonCredit;
 import info.movito.themoviedbapi.model.people.PersonCredits;
-import info.movito.themoviedbapi.model.people.PersonCrew;
 
 
 /**
@@ -31,17 +20,9 @@ import info.movito.themoviedbapi.model.people.PersonCrew;
  *
  */
 public final class TmDBModel {
-
 	/**
-	 * 
-	 */
-	private static TmdbApi tmdbApi 
-		= new TmdbApi("ee5a0a6208f35c4a8010636efd3f5d9b");
-
-	
-	/**
-	 * @param tmdbPeople TmdbPeople
-	 * @return Person
+	 * @param tmdbPeople full list of people in the database
+	 * @return random popular actor to be compared to
 	 */
 	public static Person getPrimaryActor(final TmdbPeople tmdbPeople) {
 		List<Person> popularList 
@@ -51,9 +32,9 @@ public final class TmDBModel {
 	}
 	
 	/**
-	 * @param tmdbPeople TmdbPeople
-	 * @param primaryActor Person
-	 * @return Person
+	 * @param tmdbPeople full list of people in the database
+	 * @param primaryActor the actor chosen to be compared to
+	 * @return an incorrect answer
 	 */
 	public static Person getIncorrectAnswers(
 		   final TmdbPeople tmdbPeople, final Person primaryActor) {
@@ -98,10 +79,10 @@ public final class TmDBModel {
 	}
 	
 	/**
-	 * @param tmdbPeople TmdbPeople
-	 * @param tmdbMovies TmdbMovies
-	 * @param primaryActor Person
-	 * @return PersonCast
+	 * @param tmdbPeople full list of people in the database
+	 * @param tmdbMovies full list of Movies in the database
+	 * @param primaryActor the actor chosen to be compared to
+	 * @return a correct answer- actors are in a movie together
 	 */
 	public static PersonCast getRelatedActor(final TmdbPeople tmdbPeople, 
 		   final TmdbMovies tmdbMovies, final Person primaryActor) {

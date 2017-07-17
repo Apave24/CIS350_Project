@@ -44,41 +44,66 @@ import java.awt.SystemColor;
 public class MainGUI {
 
 	/**
-	 * 
+	 * Full frame of the GUI.
 	 */
 	private JFrame frame;
 	
 	/**
-	 * 
+	 * The chosen correct answer's spot.
 	 */
 	private int correctAnswer;
 	/**
-	 * 
+	 * The actor chosen to compare to.
 	 */
 	private Person primaryActor;
 	/**
-	 * 
+	 * The actor chosen as the correct answer.
 	 */
 	private Person relatedActor;
 	/**
-	 * 
+	 * List of actors containing both correct and incorrect.
 	 */
 	private List<Person> actors = new ArrayList<Person>();
 	/**
-	 * 
+	 * Image selected for the primary actor.
 	 */
 	private List<Artwork> primaryActorImage;
 	
+	/**
+	 * Text Pane to display actor name.
+	 */
 	private JTextPane textPane4;
+	/**
+	 * Text Pane to display actor name.
+	 */
 	private JTextPane textPane3;
+	/**
+	 * Text Pane to display actor name.
+	 */
 	private JTextPane textPane2;
+	/**
+	 * Text Pane to display actor name.
+	 */
 	private JTextPane textPane1;
+	/**
+	 * Text Pane to display actor name.
+	 */
 	private JTextPane textPane;
+	/**
+	 * Icon to store the primary actors picture.
+	 */
 	private ImageIcon icon;
+	/**
+	 * Text Pane to display primary actor's name.
+	 */
 	private JTextPane textPanePrimary;
+	/**
+	 * Label to display the actor's image.
+	 */
 	private JLabel lblNewLabel;
 	
 	/**
+	 * Start GUI and catch any errors present. 
 	 * @param args String[]
 	 */
 	public static void main(final String[] args) {
@@ -103,7 +128,7 @@ public class MainGUI {
 	}
 	
 	/**
-	 * 
+	 * Updates the question and answers for the game.
 	 */
 	public void update() {
 		Random randomIndex = new Random();
@@ -113,8 +138,11 @@ public class MainGUI {
 		TmdbPeople tmdbPeople = tmdbApi.getPeople();
 		TmdbMovies tmdbMovies = tmdbApi.getMovies(); 
 		primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
-		relatedActor = TmDBModel.getRelatedActor(
+		
+		do {
+			relatedActor = TmDBModel.getRelatedActor(
 				tmdbPeople, tmdbMovies, primaryActor);
+		} while (relatedActor.getCastId() == primaryActor.getCastId());
 		
 		primaryActorImage 
 			= tmdbPeople.getPersonImages(primaryActor.getId());
@@ -130,6 +158,7 @@ public class MainGUI {
 	}
 	
 	/**
+	 * Updates the GUI components with actors name and adds image.
 	 * @throws MalformedURLException a
 	 */
 	public void updateGUI() {
@@ -169,6 +198,7 @@ public class MainGUI {
 
 	/**
 	 * Initialize the contents of the frame.
+	 * Including setting up action listeners excluding dynamic field text.
 	 * @throws MalformedURLException 
 	 */
 	private void initialize() throws MalformedURLException {	
@@ -183,7 +213,6 @@ public class MainGUI {
 		frame.getContentPane().setLayout(null);
 		
 		textPanePrimary = new JTextPane();
-		textPanePrimary.setText(primaryActor.getName());
 		textPanePrimary.setBackground(
 				UIManager.getColor("Button.background"));
 		textPanePrimary.setBounds(310, 31, 259, 26);
@@ -192,31 +221,31 @@ public class MainGUI {
 		textPane4 = new JTextPane();
 		textPane4.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane4.setBackground(SystemColor.window);
-		textPane4.setBounds(505, 291, 90, 16);
+		textPane4.setBounds(505, 291, 90, 25);
 		frame.getContentPane().add(textPane4);
 		
 		textPane3 = new JTextPane();
 		textPane3.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane3.setBackground(SystemColor.window);
-		textPane3.setBounds(385, 291, 90, 16);
+		textPane3.setBounds(385, 291, 90, 25);
 		frame.getContentPane().add(textPane3);
 		
 		textPane2 = new JTextPane();
 		textPane2.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane2.setBackground(SystemColor.window);
-		textPane2.setBounds(271, 291, 76, 16);
+		textPane2.setBounds(271, 291, 76, 25);
 		frame.getContentPane().add(textPane2);
 		
 		textPane1 = new JTextPane();
 		textPane1.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane1.setBackground(SystemColor.window);
-		textPane1.setBounds(145, 291, 90, 16);
+		textPane1.setBounds(145, 291, 90, 25);
 		frame.getContentPane().add(textPane1);
 		
 		textPane = new JTextPane();
 		textPane.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane.setBackground(UIManager.getColor("Button.background"));
-		textPane.setBounds(25, 291, 90, 16);
+		textPane.setBounds(25, 291, 90, 25);
 		frame.getContentPane().add(textPane);
 		
 		JButton btnOne = new JButton();
@@ -328,8 +357,6 @@ public class MainGUI {
 		});
 		btnFive.setBounds(500, 275, 100, 50);
 		frame.getContentPane().add(btnFive);
-		
-
 		
 		JTextPane txtpnWhichActorListed = new JTextPane();
 		txtpnWhichActorListed.setText(
