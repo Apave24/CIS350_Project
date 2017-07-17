@@ -192,6 +192,7 @@ public class MainGUI {
 			Image newimg = img.getScaledInstance(
 				150, 200,  java.awt.Image.SCALE_SMOOTH);  
 			icon = new ImageIcon(newimg);
+			lblNewLabel.setIcon(icon);
 		}
 		
 	}
@@ -258,7 +259,7 @@ public class MainGUI {
 					   JOptionPane.INFORMATION_MESSAGE);
 					update();
 					updateGUI();
-					lblNewLabel.setVisible(false);
+					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
@@ -280,7 +281,7 @@ public class MainGUI {
 					   JOptionPane.INFORMATION_MESSAGE);
 					update();
 					updateGUI();
-					lblNewLabel.setVisible(false);
+					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
@@ -302,7 +303,7 @@ public class MainGUI {
 					   JOptionPane.INFORMATION_MESSAGE);
 					update();
 					updateGUI();
-					lblNewLabel.setVisible(false);
+					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
@@ -324,7 +325,7 @@ public class MainGUI {
 					   JOptionPane.INFORMATION_MESSAGE);
 					update();
 					updateGUI();
-					lblNewLabel.setVisible(false);
+					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
@@ -346,7 +347,7 @@ public class MainGUI {
 					   JOptionPane.INFORMATION_MESSAGE);
 					update();
 					updateGUI();
-					lblNewLabel.setVisible(false);
+					//lblNewLabel.setVisible(false);
 					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
@@ -366,13 +367,14 @@ public class MainGUI {
 		txtpnWhichActorListed.setBounds(16, 31, 282, 16);
 		frame.getContentPane().add(txtpnWhichActorListed);
 		
-		updateGUI();
-
+		
 		lblNewLabel = new JLabel("");
-
 		lblNewLabel.setIcon(icon);
 		lblNewLabel.setBounds(235, 60, 150, 200);
 		frame.getContentPane().add(lblNewLabel);
+		updateGUI();
+
+
 		
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setBounds(10, 340, 600, 33);
@@ -392,7 +394,7 @@ public class MainGUI {
 			public void actionPerformed(final ActionEvent e) {
 				update();
 				updateGUI();
-				lblNewLabel.setVisible(false);
+				//lblNewLabel.setVisible(false);
 				frame.getContentPane().repaint();
 			}
 		});
