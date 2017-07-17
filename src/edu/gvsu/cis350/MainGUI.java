@@ -118,6 +118,7 @@ public class MainGUI {
 		
 		primaryActorImage 
 			= tmdbPeople.getPersonImages(primaryActor.getId());
+		actors.clear();
 		for (int x = 0; x < 5; x++) {
 			if (correctAnswer == x) {
 				actors.add(relatedActor);
@@ -181,6 +182,13 @@ public class MainGUI {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		frame.getContentPane().setLayout(null);
 		
+		textPanePrimary = new JTextPane();
+		textPanePrimary.setText(primaryActor.getName());
+		textPanePrimary.setBackground(
+				UIManager.getColor("Button.background"));
+		textPanePrimary.setBounds(310, 31, 259, 26);
+		frame.getContentPane().add(textPanePrimary);
+		
 		textPane4 = new JTextPane();
 		textPane4.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane4.setBackground(SystemColor.window);
@@ -219,6 +227,10 @@ public class MainGUI {
 					JOptionPane.showMessageDialog(
 						null, "Correct Answer", "",
 					   JOptionPane.INFORMATION_MESSAGE);
+					update();
+					updateGUI();
+					lblNewLabel.setVisible(false);
+					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
@@ -237,6 +249,10 @@ public class MainGUI {
 					JOptionPane.showMessageDialog(
 						null, "Correct Answer", "",
 					   JOptionPane.INFORMATION_MESSAGE);
+					update();
+					updateGUI();
+					lblNewLabel.setVisible(false);
+					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
@@ -255,6 +271,10 @@ public class MainGUI {
 					JOptionPane.showMessageDialog(
 						null, "Correct Answer", "",
 					   JOptionPane.INFORMATION_MESSAGE);
+					update();
+					updateGUI();
+					lblNewLabel.setVisible(false);
+					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
@@ -273,6 +293,10 @@ public class MainGUI {
 					JOptionPane.showMessageDialog(
 						null, "Correct Answer", "",
 					   JOptionPane.INFORMATION_MESSAGE);
+					update();
+					updateGUI();
+					lblNewLabel.setVisible(false);
+					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
@@ -291,6 +315,10 @@ public class MainGUI {
 					JOptionPane.showMessageDialog(
 						null, "Correct Answer", "",
 					   JOptionPane.INFORMATION_MESSAGE);
+					update();
+					updateGUI();
+					lblNewLabel.setVisible(false);
+					frame.getContentPane().repaint();
 				} else {
 					JOptionPane.showMessageDialog(
 						null, "Incorrect Answer", "",
@@ -301,12 +329,7 @@ public class MainGUI {
 		btnFive.setBounds(500, 275, 100, 50);
 		frame.getContentPane().add(btnFive);
 		
-		textPanePrimary = new JTextPane();
-		textPanePrimary.setText(primaryActor.getName());
-		textPanePrimary.setBackground(
-				UIManager.getColor("Button.background"));
-		textPanePrimary.setBounds(310, 31, 259, 26);
-		frame.getContentPane().add(textPanePrimary);
+
 		
 		JTextPane txtpnWhichActorListed = new JTextPane();
 		txtpnWhichActorListed.setText(
@@ -342,6 +365,7 @@ public class MainGUI {
 			public void actionPerformed(final ActionEvent e) {
 				update();
 				updateGUI();
+				lblNewLabel.setVisible(false);
 				frame.getContentPane().repaint();
 			}
 		});
