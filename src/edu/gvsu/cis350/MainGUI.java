@@ -206,7 +206,7 @@ public class MainGUI {
 		update();
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 620, 400);
+		frame.setBounds(100, 100, 620, 450);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
 		JPanel panel = new JPanel();
@@ -222,31 +222,31 @@ public class MainGUI {
 		textPane4 = new JTextPane();
 		textPane4.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane4.setBackground(SystemColor.window);
-		textPane4.setBounds(505, 291, 90, 25);
+		textPane4.setBounds(505, 300, 90, 25);
 		frame.getContentPane().add(textPane4);
 		
 		textPane3 = new JTextPane();
 		textPane3.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane3.setBackground(SystemColor.window);
-		textPane3.setBounds(385, 291, 90, 25);
+		textPane3.setBounds(385, 300, 90, 25);
 		frame.getContentPane().add(textPane3);
 		
 		textPane2 = new JTextPane();
 		textPane2.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane2.setBackground(SystemColor.window);
-		textPane2.setBounds(271, 291, 76, 25);
+		textPane2.setBounds(271, 300, 76, 25);
 		frame.getContentPane().add(textPane2);
 		
 		textPane1 = new JTextPane();
 		textPane1.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane1.setBackground(SystemColor.window);
-		textPane1.setBounds(145, 291, 90, 25);
+		textPane1.setBounds(145, 300, 90, 25);
 		frame.getContentPane().add(textPane1);
 		
 		textPane = new JTextPane();
 		textPane.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		textPane.setBackground(UIManager.getColor("Button.background"));
-		textPane.setBounds(25, 291, 90, 25);
+		textPane.setBounds(25, 300, 90, 25);
 		frame.getContentPane().add(textPane);
 		
 		JButton btnOne = new JButton();
@@ -268,7 +268,7 @@ public class MainGUI {
 				}
 			}
 		});
-		btnOne.setBounds(20, 275, 100, 50);
+		btnOne.setBounds(20, 325, 100, 50);
 		frame.getContentPane().add(btnOne);
 		
 		JButton btnTwo = new JButton();
@@ -290,7 +290,7 @@ public class MainGUI {
 				}
 			}
 		});
-		btnTwo.setBounds(140, 275, 100, 50);
+		btnTwo.setBounds(140, 325, 100, 50);
 		frame.getContentPane().add(btnTwo);
 		
 		JButton btnThree = new JButton();
@@ -312,7 +312,7 @@ public class MainGUI {
 				}
 			}
 		});
-		btnThree.setBounds(265, 275, 90, 50);
+		btnThree.setBounds(265, 325, 90, 50);
 		frame.getContentPane().add(btnThree);
 		
 		JButton btnFour = new JButton();
@@ -334,7 +334,7 @@ public class MainGUI {
 				}
 			}
 		});
-		btnFour.setBounds(380, 275, 100, 50);
+		btnFour.setBounds(380, 325, 100, 50);
 		frame.getContentPane().add(btnFour);
 		
 		JButton btnFive = new JButton();
@@ -356,7 +356,7 @@ public class MainGUI {
 				}
 			}
 		});
-		btnFive.setBounds(500, 275, 100, 50);
+		btnFive.setBounds(500, 325, 100, 50);
 		frame.getContentPane().add(btnFive);
 		
 		JTextPane txtpnWhichActorListed = new JTextPane();
@@ -377,7 +377,7 @@ public class MainGUI {
 
 		
 		JSplitPane splitPane = new JSplitPane();
-		splitPane.setBounds(10, 340, 600, 33);
+		splitPane.setBounds(10, 390, 600, 33);
 		frame.getContentPane().add(splitPane);
 		splitPane.setResizeWeight(0.3);
 		
