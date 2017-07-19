@@ -142,7 +142,7 @@ public class MainGUI {
 	public void update() {
 		wins++;
 		Random randomIndex = new Random();
-		correctAnswer = randomIndex.nextInt(4);
+		correctAnswer = randomIndex.nextInt(5);
 		TmdbApi tmdbApi 
 			= new TmdbApi("ee5a0a6208f35c4a8010636efd3f5d9b");
 		TmdbPeople tmdbPeople = tmdbApi.getPeople();
