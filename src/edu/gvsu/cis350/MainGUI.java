@@ -36,11 +36,11 @@ import javax.swing.JLabel;
 import java.awt.SystemColor;
 
 /**
- * @author evankiel
+ * Creation of Swing GUI and interaction with it.
+ * 
+ * @author Evan Kiel
  *
  */
-
-
 public class MainGUI {
 
 	/**

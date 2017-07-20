@@ -15,6 +15,8 @@ import info.movito.themoviedbapi.model.people.PersonCast;
 import info.movito.themoviedbapi.model.people.PersonCredit;
 
 /**
+ * MainGUI JUnit testing.
+ * 
  * @author Alex Pavey
  *
  */

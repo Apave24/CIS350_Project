@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
+ * MainGUI JUnit testing.
+ * 
  * @author Alex Pavey
  *
  */

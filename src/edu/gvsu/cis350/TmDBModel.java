@@ -14,9 +14,9 @@ import info.movito.themoviedbapi.model.people.PersonCredits;
 
 
 /**
- * Model class for the application.
+ * Background game base functionality.
  * 
- * @author nandigam
+ * @author Evan Kiel
  *
  */
 public final class TmDBModel {
