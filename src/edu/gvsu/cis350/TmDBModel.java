@@ -21,6 +21,7 @@ import info.movito.themoviedbapi.model.people.PersonCredits;
  */
 public final class TmDBModel {
 	/**
+	 * Pulls a random actor from the list of popular actors.
 	 * @param tmdbPeople full list of people in the database
 	 * @return random popular actor to be compared to
 	 */
@@ -32,9 +33,10 @@ public final class TmDBModel {
 	}
 	
 	/**
+	 * Finds an actor that is not in a movie with the primary actor.
 	 * @param tmdbPeople full list of people in the database
 	 * @param primaryActor the actor chosen to be compared to
-	 * @return an incorrect answer
+	 * @return an actor unrelated to the primaryActor
 	 */
 	public static Person getIncorrectAnswers(
 		   final TmdbPeople tmdbPeople, final Person primaryActor) {
@@ -79,6 +81,7 @@ public final class TmDBModel {
 	}
 	
 	/**
+	 * Finds an actor that was in a movie with the primary actor.
 	 * @param tmdbPeople full list of people in the database
 	 * @param tmdbMovies full list of Movies in the database
 	 * @param primaryActor the actor chosen to be compared to

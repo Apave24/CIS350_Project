@@ -21,14 +21,21 @@ import info.movito.themoviedbapi.model.people.PersonCredit;
 public class TmDBModelTest {
 	
 	/**
-	 * 
+	 * Created key using session id.
 	 */
-	private TmdbApi tmdbApi = new TmdbApi("ee5a0a6208f35c4a8010636efd3f5d9b");
+	private TmdbApi tmdbApi 
+		= new TmdbApi("ee5a0a6208f35c4a8010636efd3f5d9b");
+	/**
+	 * Object containing all people in database.
+	 */
 	private TmdbPeople tmdbPeople = tmdbApi.getPeople();
+	/**
+	 * Object containing all movies in database.
+	 */
 	private TmdbMovies tmdbMovies = tmdbApi.getMovies(); 
 
 	/**
-	 * 
+	 * Tests to make sure getPrimaryActor finds any actor. 
 	 */
 	@Test
 	public void testPrimaryActor() {
@@ -38,23 +45,26 @@ public class TmDBModelTest {
 	}
 	
 	/**
-	 * 
+	 * Tests to see if getIncorrectAnswers returns an incorrect answer.
 	 */
 	@Test
 	public void testIncorrectActor() {
 		boolean actorInMovieList = false;
 		Person primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
-		Person unrelatedActor = TmDBModel.getIncorrectAnswers(tmdbPeople, primaryActor);
+		Person unrelatedActor 
+		   = TmDBModel.getIncorrectAnswers(tmdbPeople, primaryActor);
 		
-		List<PersonCredit> actorMovies = tmdbPeople.getPersonCredits(primaryActor.getId()).getCast();
+		List<PersonCredit> actorMovies = tmdbPeople
+			.getPersonCredits(primaryActor.getId()).getCast();
 		Iterator<PersonCredit> iterator = actorMovies.iterator();
 		while (iterator.hasNext()) {
 			PersonCredit movie = iterator.next();
-			List<PersonCast> cast = tmdbMovies.getCredits(movie.getMovieId()).getCast();
+			List<PersonCast> cast = tmdbMovies
+				.getCredits(movie.getMovieId()).getCast();
 			Iterator<PersonCast> relatedActors = cast.iterator();
-			while(relatedActors.hasNext()){
+			while (relatedActors.hasNext()) {
 				PersonCast actor = relatedActors.next();
-				if(actor.getId() == unrelatedActor.getId()){
+				if (actor.getId() == unrelatedActor.getId()) {
 					actorInMovieList = true;
 				}
 			}
@@ -64,23 +74,26 @@ public class TmDBModelTest {
 	}
 	
 	/**
-	 * 
+	 * Tests to see if getRelatedActor returns a correct answer.
 	 */
 	@Test
 	public void testMatchingActor() {
 		boolean actorInMovieList = false;
 		Person primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
-		Person matchingActor = TmDBModel.getRelatedActor(tmdbPeople, tmdbMovies, primaryActor);
+		Person matchingActor = TmDBModel
+			.getRelatedActor(tmdbPeople, tmdbMovies, primaryActor);
 		
-		List<PersonCredit> actorMovies = tmdbPeople.getPersonCredits(primaryActor.getId()).getCast();
+		List<PersonCredit> actorMovies = tmdbPeople
+			.getPersonCredits(primaryActor.getId()).getCast();
 		Iterator<PersonCredit> iterator = actorMovies.iterator();
 		while (iterator.hasNext()) {
 			PersonCredit movie = iterator.next();
-			List<PersonCast> cast = tmdbMovies.getCredits(movie.getMovieId()).getCast();
+			List<PersonCast> cast = tmdbMovies
+				.getCredits(movie.getMovieId()).getCast();
 			Iterator<PersonCast> relatedActors = cast.iterator();
-			while(relatedActors.hasNext()){
+			while (relatedActors.hasNext()) {
 				PersonCast actor = relatedActors.next();
-				if(actor.getId() == matchingActor.getId()){
+				if (actor.getId() == matchingActor.getId()) {
 					actorInMovieList = true;
 				}
 			}

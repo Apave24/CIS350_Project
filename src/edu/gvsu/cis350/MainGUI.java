@@ -401,7 +401,7 @@ public class MainGUI {
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				System.exit(1);
+				System.exit(0);
 			}
 		});
 		splitPane.setLeftComponent(btnQuit);
