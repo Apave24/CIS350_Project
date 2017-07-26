@@ -17,7 +17,7 @@ public class MainGUITest {
 	@Test
 	public void testUpdateGUI() {
 		try {
-			MainGUI testGUI = new MainGUI();
+			//MainGUI testGUI = new MainGUI();
 			
 		/** Cannot test because these fields are private
 		String previousTextPaneValue = testGUI.textPane.getText();
@@ -27,8 +27,8 @@ public class MainGUITest {
 		String previousTextPane4Value = testGUI.textPane.getText();
 		**/
 			
-			testGUI.update();
-			testGUI.updateGUI();
+			//testGUI.update();
+			//testGUI.updateGUI();
 			
 		/** Cannot test because these fields are private
 		String newTextPaneValue = testGUI.textPane.getText();

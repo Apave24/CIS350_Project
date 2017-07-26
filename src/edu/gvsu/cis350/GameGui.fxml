@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="634.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gvsu.cis350.Controller">
+  <items>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <GridPane alignment="CENTER" prefHeight="375.0" prefWidth="875.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="168.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="34.0" minHeight="0.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="215.0" minHeight="10.0" prefHeight="168.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fx:id="OptionImage1" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption1Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <ImageView fx:id="SixthDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+                  <ImageView fx:id="SecondDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                  <ImageView fx:id="FifthDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+                  <ImageView fx:id="FourthDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+                  <ImageView fx:id="ThirdDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                  <ImageView fx:id="OptionImage2" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ImageView fx:id="OptionImage3" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ImageView fx:id="OptionImage4" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <ImageView fx:id="OptionImage5" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <ImageView fx:id="FirstDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="FirstDegreeName" prefHeight="21.0" prefWidth="141.0" GridPane.rowIndex="1" />
+                  <Label fx:id="SecondDegreeName" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="ThirdDegreeName" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="FourthDegreeName" prefHeight="21.0" prefWidth="141.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label fx:id="FifthDegreeName" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Label fx:id="SixthDegreeName" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label fx:id="OptionName1" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="OptionName2" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label fx:id="OptionName3" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Label fx:id="OptionName4" prefHeight="21.0" prefWidth="141.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Label fx:id="OptionName5" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" prefHeight="81.0" prefWidth="144.0" text="Answer Choices:" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="140.0" prefWidth="875.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="321.0" text="Select the Actor/Actress that is in a movie with:" />
+                  <Label fx:id="PrimaryActorName" prefHeight="21.0" prefWidth="180.0" />
+                  <ImageView fx:id="PrimaryActorImage" fitHeight="150.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+    <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="851.0" SplitPane.resizableWithParent="false">
+         <children>
+            <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="70.0" text="Quit" />
+            <Button layoutX="402.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleSkipQuestion" prefHeight="31.0" prefWidth="421.0" text="Skip Question" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
