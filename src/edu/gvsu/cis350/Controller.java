@@ -2,14 +2,17 @@ package edu.gvsu.cis350;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.image.Image;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.ResourceBundle;
 
 import info.movito.themoviedbapi.TmdbApi;
 import info.movito.themoviedbapi.TmdbMovies;
@@ -17,7 +20,7 @@ import info.movito.themoviedbapi.TmdbPeople;
 import info.movito.themoviedbapi.model.Artwork;
 import info.movito.themoviedbapi.model.people.Person;
 
-public class Controller {
+public class Controller{
 	
 	private TmdbPeople tmdbPeople;
 	private TmdbMovies tmdbMovies;
@@ -96,11 +99,12 @@ public class Controller {
 		this.tmdbApi = new TmdbApi("ee5a0a6208f35c4a8010636efd3f5d9b");
 	    this.tmdbPeople = tmdbApi.getPeople();
 		this.tmdbMovies = tmdbApi.getMovies();
-		initializeGame();
 	}
-	public void initializeGame(){
+	
+	@FXML 
+	public void initialize(){
 		updateData();
-		//updateGUI();
+		updateGUI();
 	}
 	
 	/**
