@@ -32,6 +32,16 @@ public final class TmDBModel {
 		return popularList.get(randomIndex.nextInt(popularList.size()));
 	}
 	
+	public static Person getFinalActor(final TmdbPeople tmdbPeople, Person primaryActor) {
+		Person finalActor = null;
+		
+		do {
+			finalActor = getPrimaryActor(tmdbPeople);
+		} while(finalActor == primaryActor);
+		
+		return finalActor;
+	} 
+	
 	/**
 	 * Finds an actor that is not in a movie with the primary actor.
 	 * @param tmdbPeople full list of people in the database

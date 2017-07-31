@@ -92,8 +92,8 @@
       </BorderPane>
     <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="851.0" SplitPane.resizableWithParent="false">
          <children>
-            <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="70.0" text="Quit" />
-            <Button layoutX="402.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleSkipQuestion" prefHeight="31.0" prefWidth="421.0" text="Skip Question" />
+            <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="31.0" prefWidth="70.0" text="Quit" />
+            <Button layoutX="402.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleSkipQuestion" prefHeight="31.0" prefWidth="421.0" text="New Choices" />
          </children></AnchorPane>
   </items>
 </SplitPane>

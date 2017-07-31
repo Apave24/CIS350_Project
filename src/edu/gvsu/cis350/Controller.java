@@ -2,12 +2,12 @@ package edu.gvsu.cis350;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.image.Image;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -234,7 +234,7 @@ public class Controller{
 		switch(degreeCounter){
 		case 1:
 			FirstDegreeImg.setImage(correctImage);
-			FirstDegreeName.setText(actors.get(correctAnswer).getName());
+			FirstDegreeName.setText(primaryActor.getName());
 			break;
 		case 2:
 			SecondDegreeImg.setImage(correctImage);
@@ -364,5 +364,9 @@ public class Controller{
     @FXML protected void handleSkipQuestion(ActionEvent event){
     	updateData();
     	updateGUI();
+    }
+    
+    @FXML protected void handleQuit(ActionEvent event) {
+    		System.exit(0);
     }
 }
