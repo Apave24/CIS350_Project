@@ -93,7 +93,14 @@
     <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="851.0" SplitPane.resizableWithParent="false">
          <children>
             <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="31.0" prefWidth="70.0" text="Quit" />
-            <Button layoutX="402.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleSkipQuestion" prefHeight="31.0" prefWidth="421.0" text="New Choices" />
+            <Button layoutX="438.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleSkipQuestion" prefHeight="31.0" prefWidth="421.0" text="New Choices" />
+            <Button fx:id="HintButton" layoutX="354.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#handleHintClicked" prefHeight="31.0" prefWidth="70.0" text="Hint" />
+            <ChoiceBox fx:id="Difficulty" layoutX="191.0" layoutY="11.0" prefWidth="150.0" />
+            <Label layoutX="103.0" layoutY="12.0" prefHeight="30.0" prefWidth="88.0" text="Difficulty:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </items>
 </SplitPane>

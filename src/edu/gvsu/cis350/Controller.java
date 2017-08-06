@@ -1,8 +1,12 @@
 package edu.gvsu.cis350;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -111,6 +115,8 @@ public class Controller{
 	@FXML private Label UserScore;
 	@FXML private Label AnswerStatus;
 	
+	@FXML private ChoiceBox Difficulty;
+	
 	public Controller(){
 		this.tmdbApi = new TmdbApi("ee5a0a6208f35c4a8010636efd3f5d9b");
 	    this.tmdbPeople = tmdbApi.getPeople();
@@ -122,6 +128,19 @@ public class Controller{
 	
 	@FXML 
 	public void initialize(){
+		Difficulty.setItems(FXCollections.observableArrayList("Easy", "Medium", "Hard")); // adds options to the choicebox
+		Difficulty.setValue("Easy"); // sets the default to easy hopefully
+		
+		//weirdly creates selection handler
+		Difficulty.getSelectionModel().selectedIndexProperty().addListener(new 
+				ChangeListener<Number>() {
+					public void changed(ObservableValue ov,
+							Number value, Number new_value){
+						changeDifficulty(new_value);
+					}
+		});
+		
+		//TODO: initialize the game to easy
 		primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
 		
 		updateData();
@@ -167,7 +186,6 @@ public class Controller{
 		}
 		
 		Opt1ImageList = tmdbPeople.getPersonImages(actors.get(0).getId());
-		System.out.println(noArtworkAvailable.getFilePath());
 		if(Opt1ImageList.isEmpty()){
 			Opt1Image = new Image(noArtworkAvailable.getFilePath());
 		}
@@ -259,6 +277,20 @@ public class Controller{
 		}
 		
 		degreeCounter++;
+	}
+	
+	private void changeDifficulty(Number difficulty){
+		switch(difficulty.intValue()){
+			case 0:
+				//TODO: set difficulty to easy
+				break;
+			case 1:
+				//TODO: set difficulty to medium
+				break;
+			case 2:
+				//TODO: set difficulty to hard
+				break;
+		}
 	}
 
     @FXML protected void handleOption1Click(MouseEvent me) {
@@ -365,6 +397,11 @@ public class Controller{
     	updateData();
     	updateGUI();
     }
+    
+    @FXML protected void handleHintClicked(MouseEvent me){
+    	//TODO: implement Hint button with either a popup or label underneath the buttons
+    }
+    
     
     @FXML protected void handleQuit(ActionEvent event) {
     		System.exit(0);
