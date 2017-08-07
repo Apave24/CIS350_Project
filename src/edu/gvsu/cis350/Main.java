@@ -1,8 +1,4 @@
 package edu.gvsu.cis350;
-	
-import info.movito.themoviedbapi.TmdbApi;
-import info.movito.themoviedbapi.TmdbMovies;
-import info.movito.themoviedbapi.TmdbPeople;
 
 import javafx.application.Application;
 
@@ -13,7 +9,6 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
-	
 	@Override
 	public void start(Stage primaryStage) {
 		try {

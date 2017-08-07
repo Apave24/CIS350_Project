@@ -10,6 +10,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.stage.Popup;
 import javafx.scene.image.Image;
 
 
@@ -81,6 +83,10 @@ public class Controller{
 	 */
 	private int wins = 0;
 	
+	private int difficultySetting = 5;
+	
+	private int relatedMovie = 0;
+	
 	private Artwork noArtworkAvailable;
 	
 	@FXML private ImageView PrimaryActorImage;
@@ -139,6 +145,7 @@ public class Controller{
 						changeDifficulty(new_value);
 					}
 		});
+	
 		
 		//TODO: initialize the game to easy
 		primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
@@ -162,7 +169,7 @@ public class Controller{
 		
 		do {
 			relatedActor = TmDBModel.getRelatedActor(
-				tmdbPeople, tmdbMovies, primaryActor);
+				tmdbPeople, tmdbMovies, primaryActor, difficultySetting, relatedMovie);
 		} while (relatedActor.getCastId() == primaryActor.getCastId() 
 		    || relatedActor.getName().equals(primaryActor.getName()));
 		
@@ -282,13 +289,13 @@ public class Controller{
 	private void changeDifficulty(Number difficulty){
 		switch(difficulty.intValue()){
 			case 0:
-				//TODO: set difficulty to easy
+				difficultySetting = 5;
 				break;
 			case 1:
-				//TODO: set difficulty to medium
+				difficultySetting = 10;
 				break;
 			case 2:
-				//TODO: set difficulty to hard
+				difficultySetting = 100;
 				break;
 		}
 	}

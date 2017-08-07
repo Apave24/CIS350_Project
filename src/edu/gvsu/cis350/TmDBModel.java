@@ -98,19 +98,22 @@ public final class TmDBModel {
 	 * @return a correct answer- actors are in a movie together
 	 */
 	public static PersonCast getRelatedActor(final TmdbPeople tmdbPeople, 
-		   final TmdbMovies tmdbMovies, final Person primaryActor) {
-		int actorId = primaryActor.getId(); 
+		   final TmdbMovies tmdbMovies, final Person primaryActor, final int difficultySetting, int relatedMovie) {
+		int actorId = primaryActor.getId();
+		int maxValue = difficultySetting;
         List<PersonCredit> movieList 
         	= tmdbPeople.getPersonCredits(actorId).getCast();
         Random randomIndex = new Random();
-        int randomMovieId 
+        relatedMovie
         	= movieList.get(randomIndex.nextInt(
         			movieList.size())).getMovieId();
-        System.out.println(tmdbMovies.getMovie(randomMovieId, "en"));
-        List<PersonCast> cast = tmdbMovies.getCredits(randomMovieId).getCast();
-       
+        System.out.println(tmdbMovies.getMovie(relatedMovie, "en"));
+        List<PersonCast> cast = tmdbMovies.getCredits(relatedMovie).getCast();
+		if (maxValue > cast.size() || maxValue <= 0) {
+			maxValue = cast.size();
+		}
         PersonCast randomRelatedPerson 
-        	= cast.get(randomIndex.nextInt(cast.size()));
+        	= cast.get(randomIndex.nextInt(maxValue));
        
         System.out.println(randomRelatedPerson.getName());
         return randomRelatedPerson;
