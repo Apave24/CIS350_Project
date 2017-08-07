@@ -94,6 +94,7 @@ public class Controller{
 	@FXML private Label PrimaryActorName;
 	@FXML private ImageView CoverPhoto;
 	@FXML private Label RelatedMovieName;
+	@FXML private Label HintIn;
 	
 	@FXML private ImageView OptionImage1;
 	@FXML private ImageView OptionImage2;
@@ -238,12 +239,12 @@ public class Controller{
 		else {
 			Opt5Image = new Image("https://image.tmdb.org/t/p/original" + Opt5ImageList.get(0).getFilePath());
 		}
-		/*
+		
 		CoverPhotoImage = new Image(noHint.getFilePath());
-		System.out.println(CoverPhotoImage);
 		CoverPhoto.setImage(CoverPhotoImage);
+		HintIn.setVisible(false);
 		//CoverPhotoImage = new Image("https://image.tmdb.org/t/p/w1280" + tmdbMovies.getMovie(relatedMovie[0], "en").getPosterPath());
-		*/
+		
 	}
 	
 	/**
@@ -265,7 +266,7 @@ public class Controller{
 		OptionName3.setText(actors.get(2).getName());
 		OptionName4.setText(actors.get(3).getName());
 		OptionName5.setText(actors.get(4).getName());
-		//RelatedMovieName.setText("Use Hint To Reveal");
+		RelatedMovieName.setText(null);
 		
 		
 	}
@@ -325,12 +326,15 @@ public class Controller{
 		switch(difficulty.intValue()){
 			case 0:
 				difficultySetting = 5;
+				clearDegree();
 				break;
 			case 1:
 				difficultySetting = 10;
+				clearDegree();
 				break;
 			case 2:
 				difficultySetting = 100;
+				clearDegree();
 				break;
 		}
 	}
@@ -471,9 +475,12 @@ public class Controller{
     
     @FXML protected void handleHintClicked(MouseEvent me) {
     	//TODO: implement Hint button with either a popup or label underneath the buttons
-    		//CoverPhotoImage = new Image("https://image.tmdb.org/t/p/w1280" + tmdbMovies.getMovie(relatedMovie[0], "en").getPosterPath());
-    		//RelatedMovieName.setText(tmdbMovies.getMovie(relatedMovie[0], "en").getTitle());
+    		CoverPhotoImage = new Image("https://image.tmdb.org/t/p/w1280" + tmdbMovies.getMovie(relatedMovie[0], "en").getPosterPath());
+    		RelatedMovieName.setText(tmdbMovies.getMovie(relatedMovie[0], "en").getTitle());
+    		HintIn.setVisible(true);
+    		CoverPhoto.setImage(CoverPhotoImage);
     		wins--;
+    		UserScore.setText(new Integer(wins).toString());
     }
     
     
