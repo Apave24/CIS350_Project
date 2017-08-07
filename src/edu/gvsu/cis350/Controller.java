@@ -317,8 +317,10 @@ public class Controller{
 		SixthDegreeName.setText(null);
 		
 		degreeCounter = 1;
+		wins = 0;
 		updateData();
-    		updateGUI();
+    	updateGUI();
+    	UserScore.setText(new Integer(wins).toString());
 		addDegreePhoto(pAImage);
 	}
 	
