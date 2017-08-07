@@ -153,12 +153,12 @@ public class Controller{
 		});
 	
 		
-		primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
-		
 		updateData();
 		updateGUI();
 		addDegreePhoto(pAImage);
 	}
+	
+
 	
 	/**
 	 * Updates the question and answers for the game.
@@ -167,6 +167,8 @@ public class Controller{
 		
 		if(degreeCounter != 1){
 			primaryActor = actors.get(correctAnswer);
+		} else {
+			primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
 		}
 		
 		Random randomIndex = new Random();
@@ -299,6 +301,26 @@ public class Controller{
 		degreeCounter++;
 	}
 	
+	public void clearDegree() {
+		FirstDegreeImg.setImage(null);
+		SecondDegreeImg.setImage(null);
+		ThirdDegreeImg.setImage(null);
+		FourthDegreeImg.setImage(null);
+		FifthDegreeImg.setImage(null);
+		SixthDegreeImg.setImage(null);
+		FirstDegreeName.setText(null);
+		SecondDegreeName.setText(null);
+		ThirdDegreeName.setText(null);
+		FourthDegreeName.setText(null);
+		FifthDegreeName.setText(null);
+		SixthDegreeName.setText(null);
+		
+		degreeCounter = 1;
+		updateData();
+    		updateGUI();
+		addDegreePhoto(pAImage);
+	}
+	
 	private void changeDifficulty(Number difficulty){
 		switch(difficulty.intValue()){
 			case 0:
@@ -315,15 +337,21 @@ public class Controller{
 
     @FXML protected void handleOption1Click(MouseEvent me) {
     	if(correctAnswer == 0){
-    		wins++;
-    		AnswerStatus.setText("Correct!");
-    		AnswerStatus.setTextFill(Color.web("#008000"));
-    		if(me.getSource() instanceof ImageView){
-    			ImageView clickedImage = (ImageView) me.getSource();
-    			addDegreePhoto(clickedImage.getImage());
+    		if(degreeCounter < 6) {
+    			AnswerStatus.setText("Correct!");
+        		wins++;
+        		if(me.getSource() instanceof ImageView){
+        			ImageView clickedImage = (ImageView) me.getSource();
+        			addDegreePhoto(clickedImage.getImage());
+        		}
+        		updateData();
+            	updateGUI();
+    		} else {
+    			AnswerStatus.setText("Six Degrees!");
+    			wins = wins + difficultySetting;
+    			clearDegree();
     		}
-    		updateData();
-        	updateGUI();
+    		AnswerStatus.setTextFill(Color.web("#008000"));
     	}
     	else {
     		wins--;
@@ -335,15 +363,21 @@ public class Controller{
     
     @FXML protected void handleOption2Click(MouseEvent me) {
     	if(correctAnswer == 1){
-    		wins++;
-    		AnswerStatus.setText("Correct!");
-    		AnswerStatus.setTextFill(Color.web("#008000"));
-    		if(me.getSource() instanceof ImageView){
-    			ImageView clickedImage = (ImageView) me.getSource();
-    			addDegreePhoto(clickedImage.getImage());
+    		if(degreeCounter < 6) {
+    			AnswerStatus.setText("Correct!");
+        		wins++;
+        		if(me.getSource() instanceof ImageView){
+        			ImageView clickedImage = (ImageView) me.getSource();
+        			addDegreePhoto(clickedImage.getImage());
+        		}
+        		updateData();
+            	updateGUI();
+    		} else {
+    			AnswerStatus.setText("Six Degrees!");
+    			wins = wins + difficultySetting;
+    			clearDegree();
     		}
-    		updateData();
-        	updateGUI();
+    		AnswerStatus.setTextFill(Color.web("#008000"));
     	}
     	else {
     		wins--;
@@ -355,15 +389,21 @@ public class Controller{
 
     @FXML protected void handleOption3Click(MouseEvent me) {
     	if(correctAnswer == 2){
-    		wins++;
-    		AnswerStatus.setText("Correct!");
-    		AnswerStatus.setTextFill(Color.web("#008000"));
-    		if(me.getSource() instanceof ImageView){
-    			ImageView clickedImage = (ImageView) me.getSource();
-    			addDegreePhoto(clickedImage.getImage());
+    		if(degreeCounter < 6) {
+    			AnswerStatus.setText("Correct!");
+        		wins++;
+        		if(me.getSource() instanceof ImageView){
+        			ImageView clickedImage = (ImageView) me.getSource();
+        			addDegreePhoto(clickedImage.getImage());
+        		}
+        		updateData();
+            	updateGUI();
+    		} else {
+    			AnswerStatus.setText("Six Degrees!");
+    			wins = wins + difficultySetting;
+    			clearDegree();
     		}
-    		updateData();
-        	updateGUI();
+    		AnswerStatus.setTextFill(Color.web("#008000"));
     	}
     	else {
     		wins--;
@@ -375,15 +415,21 @@ public class Controller{
     
     @FXML protected void handleOption4Click(MouseEvent me) {
     	if(correctAnswer == 3){
-    		wins++;
-    		AnswerStatus.setText("Correct!");
-    		AnswerStatus.setTextFill(Color.web("#008000"));
-    		if(me.getSource() instanceof ImageView){
-    			ImageView clickedImage = (ImageView) me.getSource();
-    			addDegreePhoto(clickedImage.getImage());
+    		if(degreeCounter < 6) {
+    			AnswerStatus.setText("Correct!");
+        		wins++;
+        		if(me.getSource() instanceof ImageView){
+        			ImageView clickedImage = (ImageView) me.getSource();
+        			addDegreePhoto(clickedImage.getImage());
+        		}
+        		updateData();
+            	updateGUI();
+    		} else {
+    			AnswerStatus.setText("Six Degrees!");
+    			wins = wins + difficultySetting;
+    			clearDegree();
     		}
-    		updateData();
-        	updateGUI();
+    		AnswerStatus.setTextFill(Color.web("#008000"));
     	}
     	else {
     		wins--;
@@ -395,15 +441,21 @@ public class Controller{
     
     @FXML protected void handleOption5Click(MouseEvent me) {
     	if(correctAnswer == 4){
-    		wins++;
-    		AnswerStatus.setText("Correct!");
-    		AnswerStatus.setTextFill(Color.web("#008000"));
-    		if(me.getSource() instanceof ImageView){
-    			ImageView clickedImage = (ImageView) me.getSource();
-    			addDegreePhoto(clickedImage.getImage());
+    		if(degreeCounter < 6) {
+    			AnswerStatus.setText("Correct!");
+        		wins++;
+        		if(me.getSource() instanceof ImageView){
+        			ImageView clickedImage = (ImageView) me.getSource();
+        			addDegreePhoto(clickedImage.getImage());
+        		}
+        		updateData();
+            	updateGUI();
+    		} else {
+    			AnswerStatus.setText("Six Degrees!");
+    			wins = wins + difficultySetting;
+    			clearDegree();
     		}
-    		updateData();
-        	updateGUI();
+    		AnswerStatus.setTextFill(Color.web("#008000"));
     	}
     	else {
     		wins--;
@@ -414,14 +466,14 @@ public class Controller{
     }
     
     @FXML protected void handleSkipQuestion(ActionEvent event){
-    	updateData();
-    	updateGUI();
+    		clearDegree();
     }
     
     @FXML protected void handleHintClicked(MouseEvent me) {
     	//TODO: implement Hint button with either a popup or label underneath the buttons
     		//CoverPhotoImage = new Image("https://image.tmdb.org/t/p/w1280" + tmdbMovies.getMovie(relatedMovie[0], "en").getPosterPath());
     		//RelatedMovieName.setText(tmdbMovies.getMovie(relatedMovie[0], "en").getTitle());
+    		wins--;
     }
     
     
