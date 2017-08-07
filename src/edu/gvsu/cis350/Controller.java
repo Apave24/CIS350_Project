@@ -10,8 +10,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.stage.Popup;
 import javafx.scene.image.Image;
 
 
@@ -68,6 +66,8 @@ public class Controller{
 	private Image Opt4Image;
 	private Image Opt5Image;
 	
+	private Image CoverPhotoImage;
+	
 	/**
 	 * The actor chosen to compare to.
 	 */
@@ -85,12 +85,15 @@ public class Controller{
 	
 	private int difficultySetting = 5;
 	
-	private int relatedMovie = 0;
+	private int relatedMovie[] = {0};
 	
 	private Artwork noArtworkAvailable;
+	private Artwork noHint;
 	
 	@FXML private ImageView PrimaryActorImage;
 	@FXML private Label PrimaryActorName;
+	@FXML private ImageView CoverPhoto;
+	@FXML private Label RelatedMovieName;
 	
 	@FXML private ImageView OptionImage1;
 	@FXML private ImageView OptionImage2;
@@ -130,6 +133,9 @@ public class Controller{
 		
 		this.noArtworkAvailable = new Artwork();
 		this.noArtworkAvailable.setFilePath("file://" + getClass().getResource("NoPhoto.jpg").getPath());
+		
+		this.noHint = new Artwork();
+		this.noHint.setFilePath("file://" + getClass().getResource("NoHint.jpg").getPath());
 	}
 	
 	@FXML 
@@ -147,7 +153,6 @@ public class Controller{
 		});
 	
 		
-		//TODO: initialize the game to easy
 		primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
 		
 		updateData();
@@ -231,7 +236,12 @@ public class Controller{
 		else {
 			Opt5Image = new Image("https://image.tmdb.org/t/p/original" + Opt5ImageList.get(0).getFilePath());
 		}
-		
+		/*
+		CoverPhotoImage = new Image(noHint.getFilePath());
+		System.out.println(CoverPhotoImage);
+		CoverPhoto.setImage(CoverPhotoImage);
+		//CoverPhotoImage = new Image("https://image.tmdb.org/t/p/w1280" + tmdbMovies.getMovie(relatedMovie[0], "en").getPosterPath());
+		*/
 	}
 	
 	/**
@@ -253,6 +263,9 @@ public class Controller{
 		OptionName3.setText(actors.get(2).getName());
 		OptionName4.setText(actors.get(3).getName());
 		OptionName5.setText(actors.get(4).getName());
+		//RelatedMovieName.setText("Use Hint To Reveal");
+		
+		
 	}
 	
 	private void addDegreePhoto(Image correctImage){
@@ -405,8 +418,10 @@ public class Controller{
     	updateGUI();
     }
     
-    @FXML protected void handleHintClicked(MouseEvent me){
+    @FXML protected void handleHintClicked(MouseEvent me) {
     	//TODO: implement Hint button with either a popup or label underneath the buttons
+    		//CoverPhotoImage = new Image("https://image.tmdb.org/t/p/w1280" + tmdbMovies.getMovie(relatedMovie[0], "en").getPosterPath());
+    		//RelatedMovieName.setText(tmdbMovies.getMovie(relatedMovie[0], "en").getTitle());
     }
     
     

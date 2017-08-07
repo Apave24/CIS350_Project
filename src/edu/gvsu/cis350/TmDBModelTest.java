@@ -81,7 +81,7 @@ public class TmDBModelTest {
 	@Test
 	public void testMatchingActor() {
 		boolean actorInMovieList = false;
-		int related = 0;
+		int related[] = {0};
 		Person primaryActor = TmDBModel.getPrimaryActor(tmdbPeople);
 		Person matchingActor = TmDBModel
 			.getRelatedActor(tmdbPeople, tmdbMovies, primaryActor, 2, related);
