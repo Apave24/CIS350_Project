@@ -14,28 +14,28 @@
       <center>
         <GridPane alignment="CENTER" prefHeight="375.0" prefWidth="875.0" BorderPane.alignment="CENTER">
           <children>
-            <ImageView fx:id="OptionImage1" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption1Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <ImageView fx:id="SixthDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
-            <ImageView fx:id="SecondDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
-            <ImageView fx:id="FifthDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
-            <ImageView fx:id="FourthDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
-            <ImageView fx:id="ThirdDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-            <ImageView fx:id="OptionImage2" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption2Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <ImageView fx:id="OptionImage3" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption3Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <ImageView fx:id="OptionImage4" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption4Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <ImageView fx:id="OptionImage5" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption5Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <ImageView fx:id="FirstDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="FirstDegreeName" prefHeight="21.0" prefWidth="141.0" GridPane.rowIndex="1" />
-            <Label fx:id="SecondDegreeName" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="ThirdDegreeName" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label fx:id="FourthDegreeName" prefHeight="21.0" prefWidth="141.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label fx:id="FifthDegreeName" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Label fx:id="SixthDegreeName" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Label fx:id="OptionName1" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label fx:id="OptionName2" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label fx:id="OptionName3" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Label fx:id="OptionName4" prefHeight="21.0" prefWidth="141.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Label fx:id="OptionName5" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <ImageView fx:id="optionImage1" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption1Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <ImageView fx:id="sixthDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+            <ImageView fx:id="secondDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fx:id="fifthDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+            <ImageView fx:id="fourthDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+            <ImageView fx:id="thirdDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+            <ImageView fx:id="optionImage2" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption2Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <ImageView fx:id="optionImage3" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption3Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ImageView fx:id="optionImage4" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption4Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <ImageView fx:id="optionImage5" fitHeight="181.0" fitWidth="145.0" onMouseClicked="#handleOption5Click" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <ImageView fx:id="firstDegreeImg" fitHeight="181.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="firstDegreeName" prefHeight="21.0" prefWidth="141.0" GridPane.rowIndex="1" />
+            <Label fx:id="secondDegreeName" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="thirdDegreeName" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="fourthDegreeName" prefHeight="21.0" prefWidth="141.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label fx:id="fifthDegreeName" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label fx:id="sixthDegreeName" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label fx:id="optionName1" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="optionName2" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="optionName3" prefHeight="21.0" prefWidth="142.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label fx:id="optionName4" prefHeight="21.0" prefWidth="141.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label fx:id="optionName5" prefHeight="21.0" prefWidth="143.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
             <Label alignment="CENTER" prefHeight="81.0" prefWidth="144.0" text="Answer Choices:" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
               <font>
                 <Font size="24.0" />
@@ -64,21 +64,21 @@
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
               <children>
                 <Label layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="321.0" text="Select the Actor/Actress that is in a movie with:" />
-                <Label fx:id="PrimaryActorName" layoutX="14.0" layoutY="35.0" prefHeight="21.0" prefWidth="180.0" />
-                <ImageView id="" fx:id="CoverPhoto" fitHeight="155.0" fitWidth="120.0" layoutX="404.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
-                <Label fx:id="HintIn" layoutX="14.0" layoutY="56.0" text="In" />
-                <Label id="" fx:id="RelatedMovieName" layoutX="14.0" layoutY="72.0" prefHeight="21.0" prefWidth="180.0" />
+                <Label fx:id="primaryActorName" layoutX="14.0" layoutY="35.0" prefHeight="21.0" prefWidth="180.0" />
+                <ImageView id="" fx:id="coverPhoto" fitHeight="155.0" fitWidth="120.0" layoutX="404.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                <Label fx:id="hintIn" layoutX="14.0" layoutY="56.0" text="In" />
+                <Label id="" fx:id="relatedMovieName" layoutX="14.0" layoutY="72.0" prefHeight="21.0" prefWidth="180.0" />
               </children>
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="144.0">
               <children>
-                <Label fx:id="UserScore" layoutX="135.0" layoutY="89.0" prefHeight="47.0" prefWidth="100.0" text="0">
+                <Label fx:id="userScore" layoutX="135.0" layoutY="89.0" prefHeight="47.0" prefWidth="100.0" text="0">
                   <font>
                     <Font size="36.0" fx:id="x1" />
                   </font>
                 </Label>
                 <Label font="$x1" layoutX="28.0" layoutY="89.0" prefHeight="41.0" prefWidth="120.0" text="Score:" />
-                <Label fx:id="AnswerStatus" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="24.0" layoutY="15.0" prefHeight="50.0" prefWidth="210.0" textAlignment="CENTER" />
+                <Label fx:id="answerStatus" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="24.0" layoutY="15.0" prefHeight="50.0" prefWidth="210.0" textAlignment="CENTER" />
               </children>
             </AnchorPane>
           </items>
@@ -89,8 +89,8 @@
       <children>
         <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="31.0" prefWidth="70.0" text="Quit" />
         <Button layoutX="438.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleSkipQuestion" prefHeight="31.0" prefWidth="421.0" text="New Question" />
-        <Button fx:id="HintButton" layoutX="354.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#handleHintClicked" prefHeight="31.0" prefWidth="70.0" text="Hint" />
-        <ChoiceBox fx:id="Difficulty" layoutX="191.0" layoutY="11.0" prefWidth="150.0" />
+        <Button fx:id="hintButton" layoutX="354.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#handleHintClicked" prefHeight="31.0" prefWidth="70.0" text="Hint" />
+        <ChoiceBox fx:id="difficulty" layoutX="191.0" layoutY="11.0" prefWidth="150.0" />
         <Label layoutX="103.0" layoutY="12.0" prefHeight="30.0" prefWidth="88.0" text="Difficulty:">
           <font>
             <Font size="20.0" />

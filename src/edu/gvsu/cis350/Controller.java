@@ -151,129 +151,129 @@ public class Controller {
 	/**
 	 * 
 	 */
-	@FXML private ImageView PrimaryActorImage;
+	@FXML private ImageView primaryActorImage;
 	/**
 	 * 
 	 */
-	@FXML private Label PrimaryActorName;
+	@FXML private Label primaryActorName;
 	/**
 	 * 
 	 */
-	@FXML private ImageView CoverPhoto;
+	@FXML private ImageView coverPhoto;
 	/**
 	 * 
 	 */
-	@FXML private Label RelatedMovieName;
+	@FXML private Label relatedMovieName;
 	/**
 	 * 
 	 */
-	@FXML private Label HintIn;
+	@FXML private Label hintIn;
 	
 	/**
 	 * 
 	 */
-	@FXML private ImageView OptionImage1;
+	@FXML private ImageView optionImage1;
 	/**
 	 * 
 	 */
-	@FXML private ImageView OptionImage2;
+	@FXML private ImageView optionImage2;
 	/**
 	 * 
 	 */
-	@FXML private ImageView OptionImage3;
+	@FXML private ImageView optionImage3;
 	/**
 	 * 
 	 */
-	@FXML private ImageView OptionImage4;
+	@FXML private ImageView optionImage4;
 	/**
 	 * 
 	 */
-	@FXML private ImageView OptionImage5;
+	@FXML private ImageView optionImage5;
 	
 	/**
 	 * 
 	 */
-	@FXML private Label OptionName1;
+	@FXML private Label optionName1;
 	/**
 	 * 
 	 */
-	@FXML private Label OptionName2;
+	@FXML private Label optionName2;
 	/**
 	 * 
 	 */
-	@FXML private Label OptionName3;
+	@FXML private Label optionName3;
 	/**
 	 * 
 	 */
-	@FXML private Label OptionName4;
+	@FXML private Label optionName4;
 	/**
 	 * 
 	 */
-	@FXML private Label OptionName5;
+	@FXML private Label optionName5;
 	
 	/**
 	 * 
 	 */
-	@FXML private ImageView FirstDegreeImg;
+	@FXML private ImageView firstDegreeImg;
 	/**
 	 * 
 	 */
-	@FXML private ImageView SecondDegreeImg;
+	@FXML private ImageView secondDegreeImg;
 	/**
 	 * 
 	 */
-	@FXML private ImageView ThirdDegreeImg;
+	@FXML private ImageView thirdDegreeImg;
 	/**
 	 * 
 	 */
-	@FXML private ImageView FourthDegreeImg;
+	@FXML private ImageView fourthDegreeImg;
 	/**
 	 * 
 	 */
-	@FXML private ImageView FifthDegreeImg;
+	@FXML private ImageView fifthDegreeImg;
 	/**
 	 * 
 	 */
-	@FXML private ImageView SixthDegreeImg;
+	@FXML private ImageView sixthDegreeImg;
 	
 	/**
 	 * 
 	 */
-	@FXML private Label FirstDegreeName;
+	@FXML private Label firstDegreeName;
 	/**
 	 * 
 	 */
-	@FXML private Label SecondDegreeName;
+	@FXML private Label secondDegreeName;
 	/**
 	 * 
 	 */
-	@FXML private Label ThirdDegreeName;
+	@FXML private Label thirdDegreeName;
 	/**
 	 * 
 	 */
-	@FXML private Label FourthDegreeName;
+	@FXML private Label fourthDegreeName;
 	/**
 	 * 
 	 */
-	@FXML private Label FifthDegreeName;
+	@FXML private Label fifthDegreeName;
 	/**
 	 * 
 	 */
-	@FXML private Label SixthDegreeName;
+	@FXML private Label sixthDegreeName;
 	
 	/**
 	 * 
 	 */
-	@FXML private Label UserScore;
+	@FXML private Label userScore;
 	/**
 	 * 
 	 */
-	@FXML private Label AnswerStatus;
+	@FXML private Label answerStatus;
 	
 	/**
 	 * 
 	 */
-	@FXML private ChoiceBox<String> Difficulty;
+	@FXML private ChoiceBox<String> difficulty;
 	
 	/**
 	 * 
@@ -299,12 +299,12 @@ public class Controller {
 	 */
 	@FXML 
 	public void initialize() {
-		Difficulty.setItems(FXCollections
+		difficulty.setItems(FXCollections
 				.observableArrayList("Easy", "Medium", "Hard"));
-		Difficulty.setValue("Easy"); 
+		difficulty.setValue("Easy"); 
 		
 		//weirdly creates selection handler
-		Difficulty.getSelectionModel().selectedIndexProperty()
+		difficulty.getSelectionModel().selectedIndexProperty()
 				.addListener(new ChangeListener<Number>() {
 			public void changed(final ObservableValue ov,
 				final Number value, final Number newValue) {
@@ -412,8 +412,8 @@ public class Controller {
 		}
 		
 		coverPhotoImage = new Image(noHint.getFilePath());
-		CoverPhoto.setImage(coverPhotoImage);
-		HintIn.setVisible(false);
+		coverPhoto.setImage(coverPhotoImage);
+		hintIn.setVisible(false);
 	}
 	
 	/**
@@ -422,20 +422,20 @@ public class Controller {
 	public void updateGUI() {
 		
 		// Update ImageView images
-		OptionImage1.setImage(optImage1);
-		OptionImage2.setImage(optImage2);
-		OptionImage3.setImage(optImage3);
-		OptionImage4.setImage(optImage4);
-		OptionImage5.setImage(optImage5);
-		
+		optionImage1.setImage(optImage1);
+		optionImage2.setImage(optImage2);
+		optionImage3.setImage(optImage3);
+		optionImage4.setImage(optImage4);
+		optionImage5.setImage(optImage5);
+	
 		// Update Label text
-		PrimaryActorName.setText(primaryActor.getName());
-		OptionName1.setText(actors.get(0).getName());
-		OptionName2.setText(actors.get(1).getName());
-		OptionName3.setText(actors.get(2).getName());
-		OptionName4.setText(actors.get(3).getName());
-		OptionName5.setText(actors.get(4).getName());
-		RelatedMovieName.setText(null);
+		primaryActorName.setText(primaryActor.getName());
+		optionName1.setText(actors.get(0).getName());
+		optionName2.setText(actors.get(1).getName());
+		optionName3.setText(actors.get(2).getName());
+		optionName4.setText(actors.get(3).getName());
+		optionName5.setText(actors.get(4).getName());
+		relatedMovieName.setText(null);
 		
 		
 	}
@@ -446,32 +446,32 @@ public class Controller {
 	private void addDegreePhoto(final Image correctImage) {
 		switch (degreeCounter) {
 		case 1:
-			FirstDegreeImg.setImage(correctImage);
-			FirstDegreeName.setText(primaryActor.getName());
+			firstDegreeImg.setImage(correctImage);
+			firstDegreeName.setText(primaryActor.getName());
 			break;
 		case 2:
-			SecondDegreeImg.setImage(correctImage);
-			SecondDegreeName
+			secondDegreeImg.setImage(correctImage);
+			secondDegreeName
 				.setText(actors.get(correctAnswer).getName());
 			break;
 		case 3:
-			ThirdDegreeImg.setImage(correctImage);
-			ThirdDegreeName
+			thirdDegreeImg.setImage(correctImage);
+			thirdDegreeName
 				.setText(actors.get(correctAnswer).getName());
 			break;
 		case 4:
-			FourthDegreeImg.setImage(correctImage);
-			FourthDegreeName
+			fourthDegreeImg.setImage(correctImage);
+			fourthDegreeName
 				.setText(actors.get(correctAnswer).getName());
 			break;
 		case 5:
-			FifthDegreeImg.setImage(correctImage);
-			FifthDegreeName
+			fifthDegreeImg.setImage(correctImage);
+			fifthDegreeName
 				.setText(actors.get(correctAnswer).getName());
 			break;
 		case 6:
-			SixthDegreeImg.setImage(correctImage);
-			SixthDegreeName
+			sixthDegreeImg.setImage(correctImage);
+			sixthDegreeName
 				.setText(actors.get(correctAnswer).getName());
 			break;
 		default:
@@ -486,23 +486,23 @@ public class Controller {
 	 * 
 	 */
 	public void clearDegree() {
-		FirstDegreeImg.setImage(null);
-		SecondDegreeImg.setImage(null);
-		ThirdDegreeImg.setImage(null);
-		FourthDegreeImg.setImage(null);
-		FifthDegreeImg.setImage(null);
-		SixthDegreeImg.setImage(null);
-		FirstDegreeName.setText(null);
-		SecondDegreeName.setText(null);
-		ThirdDegreeName.setText(null);
-		FourthDegreeName.setText(null);
-		FifthDegreeName.setText(null);
-		SixthDegreeName.setText(null);
+		firstDegreeImg.setImage(null);
+		secondDegreeImg.setImage(null);
+		thirdDegreeImg.setImage(null);
+		fourthDegreeImg.setImage(null);
+		fifthDegreeImg.setImage(null);
+		sixthDegreeImg.setImage(null);
+		firstDegreeName.setText(null);
+		secondDegreeName.setText(null);
+		thirdDegreeName.setText(null);
+		fourthDegreeName.setText(null);
+		fifthDegreeName.setText(null);
+		sixthDegreeName.setText(null);
 		
 		degreeCounter = 1;
 		updateData();
     	updateGUI();
-    	UserScore.setText(new Integer(wins).toString());
+    	userScore.setText(new Integer(wins).toString());
 		addDegreePhoto(pAImage);
 	}
 	
@@ -537,7 +537,7 @@ public class Controller {
     @FXML protected void handleOption1Click(final MouseEvent me) {
     	if (correctAnswer == 0) {
     		if (degreeCounter < 6) {
-    			AnswerStatus.setText("Correct!");
+    			answerStatus.setText("Correct!");
         		wins++;
         		if (me.getSource() instanceof ImageView) {
         			ImageView clickedImage 
@@ -547,17 +547,17 @@ public class Controller {
         		updateData();
             	updateGUI();
     		} else {
-    			AnswerStatus.setText("Six Degrees!");
+    			answerStatus.setText("Six Degrees!");
     			wins = wins + difficultySetting;
     			clearDegree();
     		}
-    		AnswerStatus.setTextFill(Color.web("#008000"));
+    		answerStatus.setTextFill(Color.web("#008000"));
     	} else {
     		wins--;
-    		AnswerStatus.setText("Incorrect!");
-    		AnswerStatus.setTextFill(Color.web("#FF0000"));
+    		answerStatus.setText("Incorrect!");
+    		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	UserScore.setText(new Integer(wins).toString());
+    	userScore.setText(new Integer(wins).toString());
     }
     
     /**
@@ -566,7 +566,7 @@ public class Controller {
     @FXML protected void handleOption2Click(final MouseEvent me) {
     	if (correctAnswer == 1) {
     		if (degreeCounter < 6) {
-    			AnswerStatus.setText("Correct!");
+    			answerStatus.setText("Correct!");
         		wins++;
         		if (me.getSource() instanceof ImageView) {
         			ImageView clickedImage 
@@ -576,17 +576,17 @@ public class Controller {
         		updateData();
             	updateGUI();
     		} else {
-    			AnswerStatus.setText("Six Degrees!");
+    			answerStatus.setText("Six Degrees!");
     			wins = wins + difficultySetting;
     			clearDegree();
     		}
-    		AnswerStatus.setTextFill(Color.web("#008000"));
+    		answerStatus.setTextFill(Color.web("#008000"));
     	} else {
     		wins--;
-    		AnswerStatus.setText("Incorrect!");
-    		AnswerStatus.setTextFill(Color.web("#FF0000"));
+    		answerStatus.setText("Incorrect!");
+    		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	UserScore.setText(new Integer(wins).toString());
+    	userScore.setText(new Integer(wins).toString());
     }
 
     /**
@@ -595,7 +595,7 @@ public class Controller {
     @FXML protected void handleOption3Click(final MouseEvent me) {
     	if (correctAnswer == 2) {
     		if (degreeCounter < 6) {
-    			AnswerStatus.setText("Correct!");
+    			answerStatus.setText("Correct!");
         		wins++;
         		if (me.getSource() instanceof ImageView) {
         			ImageView clickedImage 
@@ -605,17 +605,17 @@ public class Controller {
         		updateData();
             	updateGUI();
     		} else {
-    			AnswerStatus.setText("Six Degrees!");
+    			answerStatus.setText("Six Degrees!");
     			wins = wins + difficultySetting;
     			clearDegree();
     		}
-    		AnswerStatus.setTextFill(Color.web("#008000"));
+    		answerStatus.setTextFill(Color.web("#008000"));
     	} else {
     		wins--;
-    		AnswerStatus.setText("Incorrect!");
-    		AnswerStatus.setTextFill(Color.web("#FF0000"));
+    		answerStatus.setText("Incorrect!");
+    		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	UserScore.setText(new Integer(wins).toString());
+    	userScore.setText(new Integer(wins).toString());
     }
     
     /**
@@ -624,7 +624,7 @@ public class Controller {
     @FXML protected void handleOption4Click(final MouseEvent me) {
     	if (correctAnswer == 3) {
     		if (degreeCounter < 6) {
-    			AnswerStatus.setText("Correct!");
+    			answerStatus.setText("Correct!");
         		wins++;
         		if (me.getSource() instanceof ImageView) {
         			ImageView clickedImage 
@@ -634,17 +634,17 @@ public class Controller {
         		updateData();
             	updateGUI();
     		} else {
-    			AnswerStatus.setText("Six Degrees!");
+    			answerStatus.setText("Six Degrees!");
     			wins = wins + difficultySetting;
     			clearDegree();
     		}
-    		AnswerStatus.setTextFill(Color.web("#008000"));
+    		answerStatus.setTextFill(Color.web("#008000"));
     	} else {
     		wins--;
-    		AnswerStatus.setText("Incorrect!");
-    		AnswerStatus.setTextFill(Color.web("#FF0000"));
+    		answerStatus.setText("Incorrect!");
+    		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	UserScore.setText(new Integer(wins).toString());
+    	userScore.setText(new Integer(wins).toString());
     }
     
     /**
@@ -653,7 +653,7 @@ public class Controller {
     @FXML protected void handleOption5Click(final MouseEvent me) {
     	if (correctAnswer == 4) {
     		if (degreeCounter < 6) {
-    			AnswerStatus.setText("Correct!");
+    			answerStatus.setText("Correct!");
         		wins++;
         		if (me.getSource() instanceof ImageView) {
         			ImageView clickedImage 
@@ -663,17 +663,17 @@ public class Controller {
         		updateData();
             	updateGUI();
     		} else {
-    			AnswerStatus.setText("Six Degrees!");
+    			answerStatus.setText("Six Degrees!");
     			wins = wins + difficultySetting;
     			clearDegree();
     		}
-    		AnswerStatus.setTextFill(Color.web("#008000"));
+    		answerStatus.setTextFill(Color.web("#008000"));
     	} else {
     		wins--;
-    		AnswerStatus.setText("Incorrect!");
-    		AnswerStatus.setTextFill(Color.web("#FF0000"));
+    		answerStatus.setText("Incorrect!");
+    		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	UserScore.setText(new Integer(wins).toString());
+    	userScore.setText(new Integer(wins).toString());
     }
     
     /**
@@ -691,12 +691,12 @@ public class Controller {
     				"https://image.tmdb.org/t/p/w1280" 
     				+ tmdbMovies.getMovie(relatedMovie[0], "en")
     				.getPosterPath());
-    		RelatedMovieName.setText(tmdbMovies
+    		relatedMovieName.setText(tmdbMovies
     				.getMovie(relatedMovie[0], "en").getTitle());
-    		HintIn.setVisible(true);
-    		CoverPhoto.setImage(coverPhotoImage);
+    		hintIn.setVisible(true);
+    		coverPhoto.setImage(coverPhotoImage);
     		wins--;
-    		UserScore.setText(new Integer(wins).toString());
+    		userScore.setText(new Integer(wins).toString());
     }
     
     
