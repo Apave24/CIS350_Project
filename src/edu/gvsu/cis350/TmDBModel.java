@@ -86,10 +86,13 @@ public final class TmDBModel {
 	 * @param tmdbPeople full list of people in the database
 	 * @param tmdbMovies full list of Movies in the database
 	 * @param primaryActor the actor chosen to be compared to
+	 * @param difficultySetting difficulty setting for game
+	 * @param relatedMovie Movie that relates actors for hint
 	 * @return a correct answer- actors are in a movie together
 	 */
 	public static PersonCast getRelatedActor(final TmdbPeople tmdbPeople, 
-		   final TmdbMovies tmdbMovies, final Person primaryActor, final int difficultySetting, int [] relatedMovie) {
+		   final TmdbMovies tmdbMovies, final Person primaryActor, 
+		   final int difficultySetting, final int[] relatedMovie) {
 		int actorId = primaryActor.getId();
 		int maxValue = difficultySetting;
         List<PersonCredit> movieList 
@@ -99,7 +102,8 @@ public final class TmDBModel {
         	= movieList.get(randomIndex.nextInt(
         			movieList.size())).getMovieId();
         System.out.println(tmdbMovies.getMovie(relatedMovie[0], "en"));
-        List<PersonCast> cast = tmdbMovies.getCredits(relatedMovie[0]).getCast();
+        List<PersonCast> cast 
+        		= tmdbMovies.getCredits(relatedMovie[0]).getCast();
 		if (maxValue > cast.size() || maxValue <= 0) {
 			maxValue = cast.size();
 		}
