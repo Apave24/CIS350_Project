@@ -30,15 +30,15 @@ import info.movito.themoviedbapi.model.people.Person;
 public class Controller {
 	
 	/**
-	 * 
+	 * Full list of people in the database.
 	 */
 	private TmdbPeople tmdbPeople;
 	/**
-	 * 
+	 * Full list of movies in the database.
 	 */
 	private TmdbMovies tmdbMovies;
 	/**
-	 * 
+	 * Call to full TMDB api.
 	 */
 	private TmdbApi tmdbApi;
 	
@@ -63,23 +63,23 @@ public class Controller {
 	private List<Artwork> pAImageList;
 	
 	/**
-	 * 
+	 * Image list for the first choice actor.
 	 */
 	private List<Artwork> optImageList1;
 	/**
-	 * 
+	 * Image list for the second choice actor.
 	 */
 	private List<Artwork> optImageList2;
 	/**
-	 * 
+	 * Image list for the third choice actor.
 	 */
 	private List<Artwork> optImageList3;
 	/**
-	 * 
+	 * Image list for the fourth choice actor.
 	 */
 	private List<Artwork> optImageList4;
 	/**
-	 * 
+	 * Image list for the fifth choice actor.
 	 */
 	private List<Artwork> optImageList5;
 	
@@ -89,28 +89,28 @@ public class Controller {
 	private Image pAImage;
 	
 	/**
-	 * 
+	 * Image selected for the first choice actor.
 	 */
 	private Image optImage1;
 	/**
-	 * 
+	 * Image selected for the second choice actor.
 	 */
 	private Image optImage2;
 	/**
-	 * 
+	 * Image selected for the third choice actor.
 	 */
 	private Image optImage3;
 	/**
-	 * 
+	 * Image selected for the fourth choice actor.
 	 */
 	private Image optImage4;
 	/**
-	 * 
+	 * Image selected for the fifth choice actor.
 	 */
 	private Image optImage5;
 	
 	/**
-	 * 
+	 * Image selected for hint cover.
 	 */
 	private Image coverPhotoImage;
 	
@@ -130,153 +130,173 @@ public class Controller {
 	private int wins = 0;
 	
 	/**
-	 * 
+	 * Current difficulty selection for answers.
 	 */
 	private int difficultySetting = 5;
 	
 	/**
-	 * 
+	 * Integer array to pass movie ID by reference.
 	 */
 	private int[] relatedMovie = {0};
 	
 	/**
-	 * 
+	 * Artwork to store default no artwork JPEG.
 	 */
 	private Artwork noArtworkAvailable;
+	
 	/**
-	 * 
+	 * Artwork to store default no hint JPEG.
 	 */
 	private Artwork noHint;
 	
 	/**
-	 * 
+	 * Storage of primary actor image.
 	 */
 	@FXML private ImageView primaryActorImage;
+	
 	/**
-	 * 
+	 * Storage of primary actor name.
 	 */
 	@FXML private Label primaryActorName;
+	
 	/**
-	 * 
+	 * FMXL image view for hint cover.
 	 */
 	@FXML private ImageView coverPhoto;
+	
 	/**
-	 * 
+	 * FMXL label for hint name.
 	 */
 	@FXML private Label relatedMovieName;
+	
 	/**
-	 * 
+	 * FMXL label for "In" hint modifier.
 	 */
 	@FXML private Label hintIn;
 	
 	/**
-	 * 
+	 * FMXL image view for choice one.
 	 */
 	@FXML private ImageView optionImage1;
 	/**
-	 * 
+	 * FMXL image view for choice two.
 	 */
 	@FXML private ImageView optionImage2;
 	/**
-	 * 
+	 * FMXL image view for choice three.
 	 */
 	@FXML private ImageView optionImage3;
 	/**
-	 * 
+	 * FMXL image view for choice four.
 	 */
 	@FXML private ImageView optionImage4;
 	/**
-	 * 
+	 * FMXL image view for choice five.
 	 */
 	@FXML private ImageView optionImage5;
 	
 	/**
-	 * 
+	 * FMXL label for choice one name.
 	 */
 	@FXML private Label optionName1;
+	
 	/**
-	 * 
+	 * FMXL label for choice two name.
 	 */
 	@FXML private Label optionName2;
+	
 	/**
-	 * 
+	 * FMXL label for choice three name.
 	 */
 	@FXML private Label optionName3;
+	
 	/**
-	 * 
+	 * FMXL label for choice four name.
 	 */
 	@FXML private Label optionName4;
+	
 	/**
-	 * 
+	 * FMXL label for choice five name.
 	 */
 	@FXML private Label optionName5;
 	
 	/**
-	 * 
+	 * FMXL image view for first degree image.
 	 */
 	@FXML private ImageView firstDegreeImg;
+	
 	/**
-	 * 
+	 * FMXL image view for second degree image.
 	 */
 	@FXML private ImageView secondDegreeImg;
+	
 	/**
-	 * 
+	 * FMXL image view for third degree image.
 	 */
 	@FXML private ImageView thirdDegreeImg;
+	
 	/**
-	 * 
+	 * FMXL image view for fourth degree image.
 	 */
 	@FXML private ImageView fourthDegreeImg;
+	
 	/**
-	 * 
+	 * FMXL image view for fifth degree image.
 	 */
 	@FXML private ImageView fifthDegreeImg;
+	
 	/**
-	 * 
+	 * FMXL image view for sixth degree image.
 	 */
 	@FXML private ImageView sixthDegreeImg;
 	
 	/**
-	 * 
+	 * FMXL label for first degree name.
 	 */
 	@FXML private Label firstDegreeName;
+	
 	/**
-	 * 
+	 * FMXL label for second degree name.
 	 */
 	@FXML private Label secondDegreeName;
+	
 	/**
-	 * 
+	 * FMXL label for third degree name.
 	 */
 	@FXML private Label thirdDegreeName;
+	
 	/**
-	 * 
+	 * FMXL label for fourth degree name.
 	 */
 	@FXML private Label fourthDegreeName;
+	
 	/**
-	 * 
+	 * FMXL label for fifth degree name.
 	 */
 	@FXML private Label fifthDegreeName;
+	
 	/**
-	 * 
+	 * FMXL label for sixth degree name.
 	 */
 	@FXML private Label sixthDegreeName;
 	
 	/**
-	 * 
+	 * FXML label for current score.
 	 */
 	@FXML private Label userScore;
+	
 	/**
-	 * 
+	 * FXML label for answer feedback.
 	 */
 	@FXML private Label answerStatus;
 	
 	/**
-	 * 
+	 * FXML drop down for difficulty setting.
 	 */
 	@FXML private ChoiceBox<String> difficulty;
 	
 	/**
-	 * 
+	 * Setup TMDB API and create default artwork.
 	 */
 	public Controller() {
 		this.tmdbApi = new TmdbApi("ee5a0a6208f35c4a8010636efd3f5d9b");
@@ -295,7 +315,7 @@ public class Controller {
 	}
 	
 	/**
-	 * 
+	 * Setup difficulty settings and start game with update calls.
 	 */
 	@FXML 
 	public void initialize() {
@@ -317,8 +337,6 @@ public class Controller {
 		updateGUI();
 		addDegreePhoto(pAImage);
 	}
-	
-
 	
 	/**
 	 * Updates the question and answers for the game.
@@ -441,6 +459,7 @@ public class Controller {
 	}
 	
 	/**
+	 * Add Image and name to the degree list.
 	 * @param correctImage Image to be used for degree
 	 */
 	private void addDegreePhoto(final Image correctImage) {
@@ -483,7 +502,7 @@ public class Controller {
 	}
 	
 	/**
-	 * 
+	 * Clear out degree list and setup new options.
 	 */
 	public void clearDegree() {
 		firstDegreeImg.setImage(null);
@@ -501,13 +520,14 @@ public class Controller {
 		
 		degreeCounter = 1;
 		updateData();
-    	updateGUI();
-    	userScore.setText(new Integer(wins).toString());
+    		updateGUI();
+    		userScore.setText(new Integer(wins).toString());
 		addDegreePhoto(pAImage);
 	}
 	
 	/**
-	 * @param difficulty Difficulty setting for the game
+	 * Change difficulty based on drop down input.
+	 * @param difficulty Difficulty setting for the game.
 	 */
 	private void changeDifficulty(final Number difficulty) {
 		switch (difficulty.intValue()) {
@@ -532,6 +552,7 @@ public class Controller {
 	}
 
     /**
+     * Capture click on image one event and determine response.
      * @param me MouseEvent captured
      */
     @FXML protected void handleOption1Click(final MouseEvent me) {
@@ -561,6 +582,7 @@ public class Controller {
     }
     
     /**
+     * Capture click on image two event and determine response.
      * @param me MouseEvent captured
      */
     @FXML protected void handleOption2Click(final MouseEvent me) {
@@ -590,6 +612,7 @@ public class Controller {
     }
 
     /**
+     * Capture click on image three event and determine response.
      * @param me MouseEvent captured
      */
     @FXML protected void handleOption3Click(final MouseEvent me) {
@@ -619,6 +642,7 @@ public class Controller {
     }
     
     /**
+     * Capture click on image four event and determine response.
      * @param me MouseEvent captured
      */
     @FXML protected void handleOption4Click(final MouseEvent me) {
@@ -648,6 +672,7 @@ public class Controller {
     }
     
     /**
+     * Capture click on image five event and determine response.
      * @param me MouseEvent captured
      */
     @FXML protected void handleOption5Click(final MouseEvent me) {
@@ -677,6 +702,7 @@ public class Controller {
     }
     
     /**
+     * Capture button press on skip and reset degree.
      * @param event Captured skip button press
      */
     @FXML protected void handleSkipQuestion(final ActionEvent event) {
@@ -684,6 +710,7 @@ public class Controller {
     }
     
     /**
+     * Capture button press on hint and display images.
      * @param me Captured mouse click on Hint button
      */
     @FXML protected void handleHintClicked(final MouseEvent me) {
@@ -701,6 +728,7 @@ public class Controller {
     
     
     /**
+     * Capture button press on quit and exit application.
      * @param event Captured quit button press
      */
     @FXML protected void handleQuit(final ActionEvent event) {
