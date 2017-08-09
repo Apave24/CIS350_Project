@@ -9,8 +9,8 @@ import javafx.scene.Scene;
 
 
 /**
+ * Create javaFX base and setup components of primary stage.
  * @author evankiel
- *
  */
 public class Main extends Application {
 	/* (non-Javadoc)
@@ -34,6 +34,7 @@ public class Main extends Application {
 	}
 	
 	/**
+	 * Launch the application.
 	 * @param args Unused command line input
 	 */
 	public static void main(final String[] args) {

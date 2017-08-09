@@ -114,7 +114,7 @@ public final class TmDBModel {
         return randomRelatedPerson;
 }
 	/**
-	 * 
+	 * Blank constructor for TmDBModel.
 	 */
 	private TmDBModel() {
 		
