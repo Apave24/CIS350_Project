@@ -332,7 +332,6 @@ public class Controller {
 			}
 		});
 	
-		
 		updateData();
 		updateGUI();
 		addDegreePhoto(pAImage);
@@ -521,7 +520,7 @@ public class Controller {
 		degreeCounter = 1;
 		updateData();
     		updateGUI();
-    		userScore.setText(new Integer(wins).toString());
+    		userScore.setText(String.valueOf(wins));
 		addDegreePhoto(pAImage);
 	}
 	
@@ -578,7 +577,7 @@ public class Controller {
     		answerStatus.setText("Incorrect!");
     		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	userScore.setText(new Integer(wins).toString());
+    	userScore.setText(String.valueOf(wins));
     }
     
     /**
@@ -608,7 +607,7 @@ public class Controller {
     		answerStatus.setText("Incorrect!");
     		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	userScore.setText(new Integer(wins).toString());
+    	userScore.setText(String.valueOf(wins));
     }
 
     /**
@@ -638,7 +637,7 @@ public class Controller {
     		answerStatus.setText("Incorrect!");
     		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	userScore.setText(new Integer(wins).toString());
+    	userScore.setText(String.valueOf(wins));
     }
     
     /**
@@ -668,7 +667,7 @@ public class Controller {
     		answerStatus.setText("Incorrect!");
     		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	userScore.setText(new Integer(wins).toString());
+    	userScore.setText(String.valueOf(wins));
     }
     
     /**
@@ -698,7 +697,7 @@ public class Controller {
     		answerStatus.setText("Incorrect!");
     		answerStatus.setTextFill(Color.web("#FF0000"));
     	}
-    	userScore.setText(new Integer(wins).toString());
+    	userScore.setText(String.valueOf(wins));
     }
     
     /**
@@ -723,7 +722,8 @@ public class Controller {
     		hintIn.setVisible(true);
     		coverPhoto.setImage(coverPhotoImage);
     		wins--;
-    		userScore.setText(new Integer(wins).toString());
+
+    		userScore.setText(String.valueOf(wins));
     }
     
     
